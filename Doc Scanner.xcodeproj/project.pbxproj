@@ -44,6 +44,9 @@
 		FC6BA9B525C56CD800D30DF7 /* bt.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BA9B025C56CD700D30DF7 /* bt.png */; };
 		FC6BA9B925C5733400D30DF7 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6BA9B825C5733400D30DF7 /* AlertView.swift */; };
 		FC6BA9BD25C5734B00D30DF7 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6BA9BC25C5734B00D30DF7 /* AlertView.xib */; };
+		FC703D8325E0E19A00E0E798 /* InsideFolderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC703D8225E0E19A00E0E798 /* InsideFolderVC.swift */; };
+		FC703D8825E0FFB500E0E798 /* InsideFolderTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC703D8725E0FFB500E0E798 /* InsideFolderTV.swift */; };
+		FC703D8E25E134A800E0E798 /* InsideFolderCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC703D8D25E134A800E0E798 /* InsideFolderCV.swift */; };
 		FC75559725D53B4300A6FC41 /* folder_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC75559625D53B4300A6FC41 /* folder_image.png */; };
 		FC75559A25D53B4900A6FC41 /* folder_lock_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC75559925D53B4900A6FC41 /* folder_lock_image.png */; };
 		FC75559D25D53B4E00A6FC41 /* file_lock_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC75559C25D53B4E00A6FC41 /* file_lock_image.png */; };
@@ -119,6 +122,9 @@
 		FC6BA9B025C56CD700D30DF7 /* bt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt.png; sourceTree = "<group>"; };
 		FC6BA9B825C5733400D30DF7 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		FC6BA9BC25C5734B00D30DF7 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		FC703D8225E0E19A00E0E798 /* InsideFolderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideFolderVC.swift; sourceTree = "<group>"; };
+		FC703D8725E0FFB500E0E798 /* InsideFolderTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideFolderTV.swift; sourceTree = "<group>"; };
+		FC703D8D25E134A800E0E798 /* InsideFolderCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideFolderCV.swift; sourceTree = "<group>"; };
 		FC75559625D53B4300A6FC41 /* folder_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_image.png; sourceTree = "<group>"; };
 		FC75559925D53B4900A6FC41 /* folder_lock_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_lock_image.png; sourceTree = "<group>"; };
 		FC75559C25D53B4E00A6FC41 /* file_lock_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = file_lock_image.png; sourceTree = "<group>"; };
@@ -317,6 +323,32 @@
 			path = CustomAlert;
 			sourceTree = "<group>";
 		};
+		FC703D8125E0E16D00E0E798 /* InsideFolder */ = {
+			isa = PBXGroup;
+			children = (
+				FC703D8C25E1348700E0E798 /* InsideFolderCV */,
+				FC703D8625E0FF8F00E0E798 /* InsideFolderTV */,
+				FC703D8225E0E19A00E0E798 /* InsideFolderVC.swift */,
+			);
+			path = InsideFolder;
+			sourceTree = "<group>";
+		};
+		FC703D8625E0FF8F00E0E798 /* InsideFolderTV */ = {
+			isa = PBXGroup;
+			children = (
+				FC703D8725E0FFB500E0E798 /* InsideFolderTV.swift */,
+			);
+			path = InsideFolderTV;
+			sourceTree = "<group>";
+		};
+		FC703D8C25E1348700E0E798 /* InsideFolderCV */ = {
+			isa = PBXGroup;
+			children = (
+				FC703D8D25E134A800E0E798 /* InsideFolderCV.swift */,
+			);
+			path = InsideFolderCV;
+			sourceTree = "<group>";
+		};
 		FC797DE625BE892800F882BE /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +452,7 @@
 		FFF325A525A73B960064D4AE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FC703D8125E0E16D00E0E798 /* InsideFolder */,
 				FCA4F28925CFB967007A55F4 /* SearchHome */,
 				FC6BA9B725C572C800D30DF7 /* CustomAlert */,
 				FC797DE625BE892800F882BE /* Settings */,
@@ -612,12 +645,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC703D8325E0E19A00E0E798 /* InsideFolderVC.swift in Sources */,
 				FF701D7E25ADF90F0029BA84 /* CreateFolderVCHelper.swift in Sources */,
 				FC797DEA25BE894800F882BE /* SettingsHelpers.swift in Sources */,
 				FC797DEC25BE894800F882BE /* SettingsViewController.swift in Sources */,
 				FF66756A25A7284F00EBBD09 /* AppDelegate.swift in Sources */,
 				FC5FCB3E25D2BD0F00A47C95 /* SearchExtentions.swift in Sources */,
 				FF7BFA5425A7AA79009FAC7A /* ScannerVC.swift in Sources */,
+				FC703D8E25E134A800E0E798 /* InsideFolderCV.swift in Sources */,
 				FC6BA9B925C5733400D30DF7 /* AlertView.swift in Sources */,
 				FC35DCDD25D1559C005178FA /* HomeCollectionView.swift in Sources */,
 				FCE1BBB625C019920058F792 /* ImageScrollView.swift in Sources */,
@@ -642,6 +677,7 @@
 				FF701D4825AC76BA0029BA84 /* EditVCHelper.swift in Sources */,
 				FC797DEB25BE894800F882BE /* SettingsTableViewCell.swift in Sources */,
 				FF25EA2125BDE2CD000CC0C4 /* DataModel.swift in Sources */,
+				FC703D8825E0FFB500E0E798 /* InsideFolderTV.swift in Sources */,
 				FC5FCB4125D2BDF400A47C95 /* Configuraton.swift in Sources */,
 				FC5FCB2D25D27F8F00A47C95 /* HomeAsset.swift in Sources */,
 			);

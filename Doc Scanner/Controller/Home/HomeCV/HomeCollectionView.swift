@@ -115,9 +115,9 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let cell : UICollectionViewCell = self.docsAndFoldsCollectionView.cellForItem(at: indexPath)!
+       // let cell : UICollectionViewCell = self.docsAndFoldsCollectionView.cellForItem(at: indexPath)!
         
-        cell.backgroundColor = UIColor(hex: "EB5757")
+        //cell.backgroundColor = UIColor(hex: "EB5757")
         
         if !self.docsAndFoldsCollectionView.allowsMultipleSelection {
             
@@ -125,17 +125,37 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                 print("multiple section called!!!")
                 
                 if self.myFolders[indexPath.row].isPasswordProtected == false {
-                    
-                    if let folderGalleryVC = self.storyboard?.instantiateViewController(withIdentifier: "folderGalleryVC") as? FolderGalleryVC {
+                    if let insideFolderVC = self.storyboard?.instantiateViewController(withIdentifier: "InsideFolderVC") as? InsideFolderVC {
                         
-                        folderGalleryVC.folderName = self.myFolders[indexPath.row].folderName!
+                        insideFolderVC.primaryKeyName = self.myFolders[indexPath.row].folderName!
+                        insideFolderVC.titleHeader = self.myFolders[indexPath.row].editablefolderName
+                        insideFolderVC.gridButttonSelected = true
+                        self.navigationController?.pushViewController(insideFolderVC, animated: true)
                         
-                        self.navigationController?.pushViewController(folderGalleryVC, animated: false)
                     }
                 }
-                else {
+                else{
                     Alerts().showGetPassAlert(controller: self, currentPassword: self.myFolders[indexPath.row].password!, index: indexPath.row, from: "folder", for_using: "password", passwordProtected: true)
                 }
+                
+                
+                
+                
+                //MARK:-previous section
+                //                if self.myFolders[indexPath.row].isPasswordProtected == false {
+                //
+                //                    if let folderGalleryVC = self.storyboard?.instantiateViewController(withIdentifier: "folderGalleryVC") as? FolderGalleryVC {
+                //
+                //                        folderGalleryVC.folderName = self.myFolders[indexPath.row].folderName!
+                //
+                //                        self.navigationController?.pushViewController(folderGalleryVC, animated: false)
+                //                    }
+                //                }
+                //                else {
+                //                    Alerts().showGetPassAlert(controller: self, currentPassword: self.myFolders[indexPath.row].password!, index: indexPath.row, from: "folder", for_using: "password", passwordProtected: true)
+                //                }
+                
+                // MARK:- ending
             }
             else {
                 print("single section called!!!")

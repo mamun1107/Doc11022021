@@ -33,10 +33,13 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
        // navigationController?.setNavigationBarHidden(true, animated: true)
         //self.navigationController?.isToolbarHidden = true
+        //self.navigationItem.backBarButtonItem?.isEnabled = false
         Extention.designDisplayMood(controller:self)
         tableViewinit()
         self.searchBar.delegate = self
-     
+        //self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Search", preferredLargeTitle: true)
+        //self.navigationItem.backBarButtonItem?.isEnabled = false
+        //self.navigationItem.hidesBackButton = true
         insertSearchData()
         setupSearchTableView()
         

@@ -129,7 +129,7 @@ extension HomeVC: UITextFieldDelegate {
         
         cell.multipleSelectionBackgroundView = view
         cell.backgroundColor = .white
-        cell.selectionStyle = .default
+       // cell.selectionStyle = .default
         //cell.tintColor = UIColor(hex: "EB5757")
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 0.5

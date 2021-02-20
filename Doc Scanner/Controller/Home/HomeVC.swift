@@ -90,7 +90,7 @@ class HomeVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-
+    
         
         self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
         
@@ -110,9 +110,14 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print("after ")
-        //self.bottomView.isHidden = true
+    
+        self.bottomView.setNeedsLayout()
+        self.bottomView.layoutIfNeeded()
+        self.navigationController?.hidesBottomBarWhenPushed = true
+        self.bottomView.setNeedsUpdateConstraints()
         
         self.navigationController?.navigationBar.isHidden = false
+        
         
         self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
         

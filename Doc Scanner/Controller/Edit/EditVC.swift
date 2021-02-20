@@ -42,7 +42,8 @@ class EditVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.isToolbarHidden = false
+      //  self.navigationController?.isToolbarHidden = false
+        self.navigationController?.hidesBottomBarWhenPushed = true
          
         self.addImageScrollView()
         self.setViewCustomColor(view: self.view, color: UIColor(hex: "EBEBEB"))

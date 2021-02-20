@@ -134,21 +134,38 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource, CellDelegateTV {
             if indexPath.section < self.myFolders.count {
                 print("for only folder!! tableView section")
                 
-                if let folderGalleryVC = self.storyboard?.instantiateViewController(withIdentifier: "folderGalleryVC") as? FolderGalleryVC {
+                // new editing working ....
+                
+                if let insideFolderVC = self.storyboard?.instantiateViewController(withIdentifier: "InsideFolderVC") as? InsideFolderVC{
                     
-                    if self.myFolders[indexPath.section].isPasswordProtected == false {
-                        
-                        folderGalleryVC.folderName = self.myFolders[indexPath.section].folderName!
-                        
-                        self.navigationController?.pushViewController(folderGalleryVC, animated: false)
+                    if self.myFolders[indexPath.section].isPasswordProtected == false{
+                        insideFolderVC.primaryKeyName = self.myFolders[indexPath.section].folderName!
+                        insideFolderVC.titleHeader = self.myFolders[indexPath.section].editablefolderName
+                        insideFolderVC.listButtonSelected = true
+                        self.navigationController?.pushViewController(insideFolderVC, animated: true)
                     }
-                    else {
-                        print("here it is")
-                        
+                    
+                    else{
                         Alerts().showGetPassAlert(controller: self, currentPassword: self.myFolders[indexPath.section].password!, index: indexPath.section, from: "folder", for_using: "password", passwordProtected: true)
-                        
                     }
+                    
                 }
+                
+//                if let folderGalleryVC = self.storyboard?.instantiateViewController(withIdentifier: "folderGalleryVC") as? FolderGalleryVC {
+//
+//                    if self.myFolders[indexPath.section].isPasswordProtected == false {
+//
+//                        folderGalleryVC.folderName = self.myFolders[indexPath.section].folderName!
+//
+//                        self.navigationController?.pushViewController(folderGalleryVC, animated: false)
+//                    }
+//                    else {
+//                        print("here it is")
+//
+//                        Alerts().showGetPassAlert(controller: self, currentPassword: self.myFolders[indexPath.section].password!, index: indexPath.section, from: "folder", for_using: "password", passwordProtected: true)
+//
+//                    }
+//                }
             }
             else {
                 
