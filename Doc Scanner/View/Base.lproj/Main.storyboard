@@ -1260,7 +1260,7 @@
                                             <constraint firstItem="Um7-S0-k7G" firstAttribute="centerX" secondItem="RBv-os-pfn" secondAttribute="centerX" id="rcv-Hb-kvv"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOP-NV-qkm">
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="BOP-NV-qkm">
                                         <rect key="frame" x="78" y="0.0" width="78" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lla-4p-iLs">
@@ -1269,6 +1269,9 @@
                                                     <constraint firstAttribute="width" secondItem="lla-4p-iLs" secondAttribute="height" multiplier="1:1" id="DxA-I5-QMs"/>
                                                 </constraints>
                                                 <state key="normal" image="list_deselect_icon_final.png"/>
+                                                <connections>
+                                                    <action selector="listButtonClicked:" destination="3dH-ov-zxC" eventType="touchUpInside" id="8P5-0u-ucT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1286,6 +1289,10 @@
                                                     <constraint firstAttribute="width" secondItem="MIS-xr-t0X" secondAttribute="height" multiplier="1:1" id="shP-G0-EhH"/>
                                                 </constraints>
                                                 <state key="normal" image="grid_deselect_icon_final.png"/>
+                                                <connections>
+                                                    <action selector="filterButtonClicked:" destination="3dH-ov-zxC" eventType="touchUpInside" id="3ZE-38-ZG4"/>
+                                                    <action selector="gridListButtonClicked:" destination="3dH-ov-zxC" eventType="touchUpInside" id="2jp-9V-MIE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1392,8 +1399,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="CSd-Kh-RIv"/>
                     <connections>
-                        <outlet property="folderButton" destination="lla-4p-iLs" id="cxb-Va-ebB"/>
-                        <outlet property="galleryButton" destination="MIS-xr-t0X" id="04p-Km-C0T"/>
                         <outlet property="topBarStackView" destination="TYn-UX-0KN" id="5b0-bR-jww"/>
                     </connections>
                 </viewController>

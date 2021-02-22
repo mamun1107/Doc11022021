@@ -30,6 +30,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource, CellDelegateTV {
     // MARK: - TV Cell Option Button
     
     func optionButtonTV(index: Int) {
+        //, whichViewController:"Home"
         
         if index < self.myFolders.count {
             Alerts().showOptionActionSheet(controller: self, folderName: self.myFolders[index].folderName ?? "", from: "folder", passwordProtected:self.myFolders[index].isPasswordProtected, index_option:index)
@@ -142,6 +143,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource, CellDelegateTV {
                         insideFolderVC.primaryKeyName = self.myFolders[indexPath.section].folderName!
                         insideFolderVC.titleHeader = self.myFolders[indexPath.section].editablefolderName
                         insideFolderVC.listButtonSelected = true
+                        insideFolderVC.homeObject = self
                         self.navigationController?.pushViewController(insideFolderVC, animated: true)
                     }
                     

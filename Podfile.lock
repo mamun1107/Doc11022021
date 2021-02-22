@@ -1,0 +1,34 @@
+PODS:
+  - FMPhotoPicker (1.3.0)
+  - Realm (10.5.1):
+    - Realm/Headers (= 10.5.1)
+  - Realm/Headers (10.5.1)
+  - RealmSwift (10.5.1):
+    - Realm (= 10.5.1)
+  - SwiftSignatureView (3.2.0)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - FMPhotoPicker
+  - RealmSwift
+  - SwiftSignatureView
+  - Toast-Swift
+
+SPEC REPOS:
+  trunk:
+    - FMPhotoPicker
+    - Realm
+    - RealmSwift
+    - SwiftSignatureView
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  FMPhotoPicker: 954d3c3e72521baffecdc23422ae149fdde3cd63
+  Realm: 77fcb4e0b9f2963ea06f584749a0d7dc9cab95e1
+  RealmSwift: 6abe6aa6cd8b70cc1a87afcb9232cabea74ff1ac
+  SwiftSignatureView: cd8cca297cc2ca6a6c174da22fb908c33d03d3c0
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 2311ec76884ac2569fc83e599f06fc2733112fa2
+
+COCOAPODS: 1.10.1

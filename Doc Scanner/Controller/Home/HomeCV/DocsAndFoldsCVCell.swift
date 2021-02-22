@@ -42,12 +42,12 @@ class DocsAndFoldsCVCell: UICollectionViewCell {
     
     // MARK: - Is Selected
     
-    override var isSelected: Bool {
-        didSet {
-            
-            self.backgroundColor = isSelected ? UIColor(hex: "EB5757") : UIColor.white
-        }
-    }
+//    override var isSelected: Bool {
+//        didSet {
+//            
+//            self.backgroundColor = isSelected ? UIColor(hex: "EB5757") : UIColor.white
+//        }
+//    }
     
     
     

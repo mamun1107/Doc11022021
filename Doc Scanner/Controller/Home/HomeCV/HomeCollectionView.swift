@@ -62,6 +62,9 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             
             //cell.docsAndFoldsImageView.image = UIImage(named: "folder_image")
             cell.nameLabel.text = self.myFolders[indexPath.row].editablefolderName
+            cell.nameLabel.font = UIFont.systemFont(ofSize: 15)
+            
+            //cell.nameLabel.adjustsFontForContentSizeCategory = true
             cell.numberOfItemsLabel.text = String(self.myFolders[indexPath.row].documents.count) + " Document(s)"
             
             cell.optionButton.tag = indexPath.row
