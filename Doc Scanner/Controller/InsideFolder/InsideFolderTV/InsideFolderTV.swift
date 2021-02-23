@@ -93,7 +93,7 @@ extension InsideFolderVC:UITableViewDelegate, UITableViewDataSource{
     // MARK: - View For Header In Section
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        return UIView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 10))
     }
     
     
@@ -122,7 +122,7 @@ extension InsideFolderVC{
         
         self.docsTableView.register(UINib(nibName: "FolderTVCell", bundle: nil), forCellReuseIdentifier: "folderCell")
         
-        self.docsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height, width: view.frame.width - 20, height: view.frame.height)
+        self.docsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height, width: view.frame.width - 20, height: (view.frame.height - (self.bottomView.frame.height + 5 )))
         
         self.docsTableView.backgroundColor = UIColor(hex: "EEEEEE")
         

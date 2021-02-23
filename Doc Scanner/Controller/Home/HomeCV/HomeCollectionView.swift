@@ -130,8 +130,8 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                 if self.myFolders[indexPath.row].isPasswordProtected == false {
                     if let insideFolderVC = self.storyboard?.instantiateViewController(withIdentifier: "InsideFolderVC") as? InsideFolderVC {
                         
-                        insideFolderVC.primaryKeyName = self.myFolders[indexPath.row].folderName!
-                        insideFolderVC.titleHeader = self.myFolders[indexPath.row].editablefolderName
+                        insideFolderVC.primaryKeyName = self.myFolders[indexPath.row].folderName ?? ""
+                        insideFolderVC.titleHeader = self.myFolders[indexPath.row].editablefolderName ?? ""
                         insideFolderVC.gridButttonSelected = true
                         self.navigationController?.pushViewController(insideFolderVC, animated: true)
                         

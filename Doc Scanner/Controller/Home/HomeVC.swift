@@ -53,6 +53,7 @@ class HomeVC: UIViewController {
         
         self.galleryButtonSelected = false
         self.folderButtonSelected = true
+        //self.title = "Library"
         
         self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
         
@@ -96,7 +97,7 @@ class HomeVC: UIViewController {
         
         self.setRefreshTVandCV(tvSortBy: "folderDateAndTime", cvSortBy: "documentSize")
         
-        self.showToast(message: "Synced", duration: 1.0, position: .center)
+        //self.showToast(message: "Synced", duration: 1.0, position: .center)
     }
     
     
@@ -119,7 +120,7 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         
         
-        self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
+       self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
         
         self.setRefreshTVandCV(tvSortBy: "folderDateAndTime", cvSortBy: "documentSize")
         

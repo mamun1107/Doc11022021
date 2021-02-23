@@ -452,14 +452,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPb-rV-ScZ">
+                                <rect key="frame" x="325" y="64" width="50" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="6dq-h0-wpR"/>
+                                    <constraint firstAttribute="width" constant="50" id="gNI-kZ-xN6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Done"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enn-mq-7QE">
+                                <rect key="frame" x="15" y="64" width="80" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="fL0-gv-0n9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QLO-Hc-yKM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="enn-mq-7QE" firstAttribute="leading" secondItem="QLO-Hc-yKM" secondAttribute="leading" constant="15" id="E6e-kt-uwJ"/>
                             <constraint firstItem="Kv8-Wx-rjP" firstAttribute="centerX" secondItem="itH-Co-oin" secondAttribute="centerX" id="TI4-Oo-t6I"/>
                             <constraint firstItem="QLO-Hc-yKM" firstAttribute="trailing" secondItem="ewz-Up-EX8" secondAttribute="trailing" constant="30" id="eic-Zu-QQT"/>
                             <constraint firstItem="Kv8-Wx-rjP" firstAttribute="centerX" secondItem="itH-Co-oin" secondAttribute="centerX" id="iIB-Sg-9fY"/>
                             <constraint firstItem="ewz-Up-EX8" firstAttribute="top" secondItem="Kv8-Wx-rjP" secondAttribute="bottom" constant="30" id="kIO-Iu-elt"/>
+                            <constraint firstItem="QLO-Hc-yKM" firstAttribute="trailing" secondItem="NPb-rV-ScZ" secondAttribute="trailing" constant="15" id="t2k-lj-6gb"/>
+                            <constraint firstItem="NPb-rV-ScZ" firstAttribute="top" secondItem="QLO-Hc-yKM" secondAttribute="top" constant="20" id="utm-TR-8fo"/>
+                            <constraint firstItem="enn-mq-7QE" firstAttribute="top" secondItem="QLO-Hc-yKM" secondAttribute="top" constant="20" id="xM8-Hh-roD"/>
                             <constraint firstItem="ewz-Up-EX8" firstAttribute="leading" secondItem="QLO-Hc-yKM" secondAttribute="leading" constant="30" id="yuM-Ic-mtK"/>
                             <constraint firstItem="Kv8-Wx-rjP" firstAttribute="centerY" secondItem="itH-Co-oin" secondAttribute="centerY" id="zwT-Zg-CMb"/>
                         </constraints>
@@ -470,7 +493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMt-YV-eGC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="172" y="-692"/>
+            <point key="canvasLocation" x="170.76923076923077" y="-692.41706161137438"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CRm-qT-Dfj">
@@ -1270,7 +1293,7 @@
                                                 </constraints>
                                                 <state key="normal" image="list_deselect_icon_final.png"/>
                                                 <connections>
-                                                    <action selector="listButtonClicked:" destination="3dH-ov-zxC" eventType="touchUpInside" id="8P5-0u-ucT"/>
+                                                    <action selector="listButtonClicked:" destination="3dH-ov-zxC" eventType="touchUpInside" id="Kqc-gF-75q"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1290,8 +1313,7 @@
                                                 </constraints>
                                                 <state key="normal" image="grid_deselect_icon_final.png"/>
                                                 <connections>
-                                                    <action selector="filterButtonClicked:" destination="3dH-ov-zxC" eventType="touchUpInside" id="3ZE-38-ZG4"/>
-                                                    <action selector="gridListButtonClicked:" destination="3dH-ov-zxC" eventType="touchUpInside" id="2jp-9V-MIE"/>
+                                                    <action selector="gridListButtonClicked:" destination="3dH-ov-zxC" eventType="touchUpInside" id="mzc-sw-EzG"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1310,6 +1332,9 @@
                                                     <constraint firstAttribute="width" secondItem="0Em-vi-8Fm" secondAttribute="height" multiplier="1:1" id="aWm-v4-mHY"/>
                                                 </constraints>
                                                 <state key="normal" image="filter_icon_final.png"/>
+                                                <connections>
+                                                    <action selector="filterButtonClicked:" destination="3dH-ov-zxC" eventType="touchUpInside" id="HKF-rv-Lib"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1399,6 +1424,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CSd-Kh-RIv"/>
                     <connections>
+                        <outlet property="bottomView" destination="6ed-1X-Kne" id="LK9-ej-kav"/>
                         <outlet property="topBarStackView" destination="TYn-UX-0KN" id="5b0-bR-jww"/>
                     </connections>
                 </viewController>
@@ -1438,6 +1464,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

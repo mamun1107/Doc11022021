@@ -31,9 +31,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // navigationController?.setNavigationBarHidden(true, animated: true)
-        //self.navigationController?.isToolbarHidden = true
-        //self.navigationItem.backBarButtonItem?.isEnabled = false
+ 
         Extention.designDisplayMood(controller:self)
         tableViewinit()
         self.searchBar.delegate = self
@@ -76,8 +74,6 @@ class SearchViewController: UIViewController {
                 customImage = UIImage(named: HomeAsset.folderUnlockImage)!
             }
             let totaldocs = String(self.totalFolders[i].documents.count) + " Document(s)"
-            
-            //let isprotected:Bool = self.totalFolders[i].isPasswordProtected
             
             self.allserarchdata.append(AllSearchData(name: self.totalFolders[i].editablefolderName ?? "", primaryKey: self.totalFolders[i].folderName ?? "" , image: customImage, totaldoc: totaldocs, ispasswordProtected: self.totalFolders[i].isPasswordProtected, password: self.totalFolders[i].password ?? "", originalImage: UIImage(named: HomeAsset.folderUnlockImage)!))
      
@@ -137,7 +133,8 @@ extension SearchViewController: UISearchBarDelegate{
         searching = false
         searchBar.text = ""
         tableView.reloadData()
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
         
     }

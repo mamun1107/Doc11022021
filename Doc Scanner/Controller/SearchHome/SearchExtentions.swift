@@ -31,7 +31,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     // MARK: - Number Of Section
-
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if searching {
@@ -41,9 +41,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
     }
-
+    
     //--------------------------------------------------------------------------------------------------------------------------------
- 
+    
     
     
     // MARK: - Height For Row At
@@ -65,28 +65,28 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     //-------------------------------------------------------------------------------------------------------------------------------------------------
     
     // MARK: - View For Header In Section
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath) as! docsAndFoldsTVCell
-
+        
         if searching {
             
             cell.nameLabel.text = self.filterSearchData[indexPath.section].name
             cell.docsAndFoldsImageView.image = self.filterSearchData[indexPath.section].image
             cell.optionButton.isHidden = true
             cell.numberOfItemsLabel.text = self.filterSearchData[indexPath.section].totaldoc
- 
-   
-        
+            
+            
+            
         } else {
-
+            
             cell.nameLabel.text = self.allserarchdata[indexPath.section].name
             cell.docsAndFoldsImageView.image = self.allserarchdata[indexPath.section].image
             cell.optionButton.isHidden = true
             cell.numberOfItemsLabel.text = self.allserarchdata[indexPath.section].totaldoc
-
-
+            
+            
         }
         
         return self.setFolderCell(cell: cell)
@@ -99,7 +99,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.multipleSelectionBackgroundView = view
         cell.backgroundColor = .white
-       
+        
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 0.5
         cell.layer.cornerRadius = 8
@@ -108,13 +108,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-
+    
     // did select Section
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print(indexPath.section)
-        if searching == true{
+        if searching{
             print("inside searching....")
             if self.filterSearchData[indexPath.section].totaldoc != "1 Document"{
                 print("folder.. when searching is True")
@@ -125,7 +125,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
         }else{
-           print("no searching....")
+            print("no searching....")
             if self.allserarchdata[indexPath.section].totaldoc != "1 Document"{
                 print("folder.. when not searching..")
                 didselectFolder(index:indexPath.section, insideSearching:false)
@@ -135,37 +135,38 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
         }
-
-
-   }
+        
+        
+    }
     
     
-    func didselectFolder(index:Int,insideSearching:Bool){
+    func didselectFolder(index:Int, insideSearching:Bool){
         
         var didselectfolderName:String = ""
         var passwordWall:Bool
         var passwordforFolder:String
+        var primaryKey:String
         
         
         didselectfolderName = (self.insideSearching == true) ? self.filterSearchData[index].name ?? "" :  self.allserarchdata[index].name ?? ""
         passwordWall = (self.insideSearching == true) ? self.filterSearchData[index].ispasswordProtected : self.allserarchdata[index].ispasswordProtected
         passwordforFolder = (self.insideSearching == true) ? self.filterSearchData[index].password! : self.allserarchdata[index].password!
+        primaryKey = insideSearching ? self.filterSearchData[index].primaryKey! : self.allserarchdata[index].primaryKey!
         
         
-        if let folderGalleryVC = self.storyboard?.instantiateViewController(withIdentifier: "folderGalleryVC") as? FolderGalleryVC {
-            
-            if passwordWall == false {
+        if passwordWall{
+            AlertSearch().getPasswordAlert(controller: self, currentPassword: passwordforFolder, index: index, from: "folder", for_using: "password", passwordProtected: true, insideSearching:insideSearching)
+        }else{
+            if let insideFolderVC = self.storyboard?.instantiateViewController(withIdentifier: "InsideFolderVC") as? InsideFolderVC{
                 
-                folderGalleryVC.folderName = didselectfolderName
+                insideFolderVC.primaryKeyName = primaryKey
+                insideFolderVC.titleHeader = didselectfolderName
+                insideFolderVC.listButtonSelected = true
+                self.navigationController?.pushViewController(insideFolderVC, animated: true)
                 
-                self.navigationController?.pushViewController(folderGalleryVC, animated: false)
-            }
-            else {
-                print("here folder is password protected... so Alert")
-                
-                AlertSearch().getPasswordAlert(controller: self, currentPassword: passwordforFolder, index: index, from: "folder", for_using: "password", passwordProtected: true, insideSearching:insideSearching)
             }
         }
+        
         
         
     }
@@ -174,24 +175,36 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         var didselectdocumentName:String = ""
         var passwordWall:Bool
         var passwordforDocumt:String
-        //var image:UIImage
         var originalimage:UIImage
+        print(index, insideSearching)
         
-        didselectdocumentName = (self.insideSearching == true) ? self.filterSearchData[index].name ?? "" :  self.allserarchdata[index].name ?? ""
-        passwordWall = (self.insideSearching == true) ? self.filterSearchData[index].ispasswordProtected : self.allserarchdata[index].ispasswordProtected
-        passwordforDocumt = (self.insideSearching == true) ? self.filterSearchData[index].password! : self.allserarchdata[index].password!
-        originalimage = (self.insideSearching == true) ? self.filterSearchData[index].originalImage : self.allserarchdata[index].originalImage
-        if let editVC = self.storyboard?.instantiateViewController(withIdentifier: "editVC") as? EditVC {
- 
-            if  passwordWall == true {
-                
+        if insideSearching{
+            print("inside searching..")
+            didselectdocumentName = filterSearchData[index].name ?? ""
+            print(didselectdocumentName)
+            passwordWall = filterSearchData[index].ispasswordProtected
+            print(passwordWall)
+            passwordforDocumt = filterSearchData[index].password!
+            originalimage = filterSearchData[index].originalImage
+            
+        }else{
+            print("outside searching..")
+            didselectdocumentName = allserarchdata[index].name ?? ""
+            print(didselectdocumentName)
+            passwordWall = allserarchdata[index].ispasswordProtected
+            print(passwordWall)
+            passwordforDocumt = allserarchdata[index].password!
+            originalimage = allserarchdata[index].originalImage
+        }
+        
+        if passwordWall{
+            AlertSearch().getPasswordAlert(controller: self, currentPassword: passwordforDocumt, index: index, from: "doc", for_using: "password", passwordProtected: true,insideSearching:insideSearching)
+        }else{
+            if let editVC = self.storyboard?.instantiateViewController(withIdentifier: "editVC") as? EditVC{
                 editVC.editImage = originalimage
-                editVC.currentDocumentName = didselectdocumentName
+                editVC.currentDocumentName = didselectdocumentName // editable DocumentName
                 
                 self.navigationController?.pushViewController(editVC, animated: true)
-            }else{
-                print("true")
-                AlertSearch().getPasswordAlert(controller: self, currentPassword: passwordforDocumt, index: index, from: "doc", for_using: "password", passwordProtected: true,insideSearching:insideSearching)
             }
         }
     }
@@ -214,14 +227,18 @@ class AlertSearch{
                 if (from == "folder" && for_using == "password") {
                     
                     let tempNameFolder = (controller.insideSearching == true) ?  controller.filterSearchData[index].primaryKey ?? "" :  controller.allserarchdata[index].primaryKey ?? ""
+                    let tempTitleName = controller.insideSearching ? controller.filterSearchData[index].name ?? "" : controller.allserarchdata[index].name ?? ""
                     
                     if text == currentPassword{
-                        //print("password match!!!")
                         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "folderGalleryVC") as! FolderGalleryVC
-                        newViewController.folderName = tempNameFolder
+                        if let insideFolderVC = storyBoard.instantiateViewController(withIdentifier: "InsideFolderVC") as? InsideFolderVC{
+                            
+                            insideFolderVC.primaryKeyName = tempNameFolder
+                            insideFolderVC.titleHeader = tempTitleName
+                            insideFolderVC.listButtonSelected = true
+                            controller.navigationController?.pushViewController(insideFolderVC, animated: true)
+                        }
                         
-                        controller.navigationController?.pushViewController(newViewController, animated: true)
                     }else{
                         controller.showMessageToUser(title: "Message", msg: "your password is worng try again")
                     }

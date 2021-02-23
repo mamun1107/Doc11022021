@@ -143,7 +143,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource, CellDelegateTV {
                         insideFolderVC.primaryKeyName = self.myFolders[indexPath.section].folderName!
                         insideFolderVC.titleHeader = self.myFolders[indexPath.section].editablefolderName
                         insideFolderVC.listButtonSelected = true
-                        insideFolderVC.homeObject = self
+                       // insideFolderVC.homeObject = self
                         self.navigationController?.pushViewController(insideFolderVC, animated: true)
                     }
                     

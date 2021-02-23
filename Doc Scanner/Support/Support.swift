@@ -27,7 +27,7 @@ extension UIViewController {
             navigationController?.navigationBar.standardAppearance = navBarAppearance
             navigationController?.navigationBar.compactAppearance = navBarAppearance
             navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-            
+
             navigationController?.navigationBar.prefersLargeTitles = preferredLargeTitle
             navigationController?.navigationBar.isTranslucent = false
             navigationController?.navigationBar.tintColor = tintColor
@@ -133,8 +133,7 @@ extension UIViewController {
         }
     }
     
-    
-    
+
     //-------------------------------------------------------------------------------------------------------------------------------------------------
     
     
