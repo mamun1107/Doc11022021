@@ -46,7 +46,7 @@ class EditVC: UIViewController {
         self.navigationController?.hidesBottomBarWhenPushed = true
          
         self.addImageScrollView()
-        self.setViewCustomColor(view: self.view, color: UIColor(hex: "EBEBEB"))
+       // self.setViewCustomColor(view: self.view, color: UIColor(hex: "EBEBEB"))
         //self.setEditImage(imageView: self.editImageView, image: self.editImage, contentMode: .scaleAspectFit)
         self.imageScrollView.set(image:self.editImage)
         

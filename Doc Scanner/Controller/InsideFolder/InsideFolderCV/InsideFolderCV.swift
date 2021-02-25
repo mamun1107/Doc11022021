@@ -47,22 +47,22 @@ extension InsideFolderVC : UICollectionViewDataSource, UICollectionViewDelegate,
         print(indexPath.row)
         
         
-        if let editVC = self.storyboard?.instantiateViewController(withIdentifier: "editVC") as? EditVC {
-            
-            if self.insideDocuments[indexPath.row].isPasswordProtected == false {
-                editVC.editImage = UIImage(data: self.insideDocuments[indexPath.row].documentData ?? Data()) ?? UIImage()
-                editVC.currentDocumentName = self.insideDocuments[indexPath.row].documentName ?? String()
-                
-                self.navigationController?.pushViewController(editVC, animated: true)
-            }else{
-                print("true")
-                AleartsInsideFolder().showGetPassAlert(controller: self, currentPassword: self.insideDocuments[indexPath.row].password!, index: indexPath.row, from: "doc", for_using: "password", passwordProtected: true, section: "collection")
-                
-            }
-            
-            
-            
-        }
+//        if let editVC = self.storyboard?.instantiateViewController(withIdentifier: "editVC") as? EditVC {
+//            
+//            if self.insideDocuments[indexPath.row].isPasswordProtected == false {
+//                editVC.editImage = UIImage(data: self.insideDocuments[indexPath.row].documentData ?? Data()) ?? UIImage()
+//                editVC.currentDocumentName = self.insideDocuments[indexPath.row].documentName ?? String()
+//                
+//                self.navigationController?.pushViewController(editVC, animated: true)
+//            }else{
+//                print("true")
+//                AleartsInsideFolder().showGetPassAlert(controller: self, currentPassword: self.insideDocuments[indexPath.row].password!, index: indexPath.row, from: "doc", for_using: "password", passwordProtected: true, section: "collection")
+//                
+//            }
+//            
+//            
+//            
+//        }
     }
     
     

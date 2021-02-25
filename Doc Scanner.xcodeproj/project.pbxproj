@@ -57,6 +57,19 @@
 		FC797DEB25BE894800F882BE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC797DE825BE894800F882BE /* SettingsTableViewCell.swift */; };
 		FC797DEC25BE894800F882BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC797DE925BE894800F882BE /* SettingsViewController.swift */; };
 		FC975D4E25D55CD200869D7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC975D4D25D55CD200869D7E /* ViewController.swift */; };
+		FC9F227325E79FBB0057B650 /* ImageSlideshowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F226525E79FB30057B650 /* ImageSlideshowItem.swift */; };
+		FC9F227425E79FBB0057B650 /* Bundle+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F226625E79FB40057B650 /* Bundle+Module.swift */; };
+		FC9F227525E79FBB0057B650 /* UIImage+AspectFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F226825E79FB50057B650 /* UIImage+AspectFit.swift */; };
+		FC9F227625E79FBB0057B650 /* PageIndicatorPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F226925E79FB60057B650 /* PageIndicatorPosition.swift */; };
+		FC9F227725E79FBB0057B650 /* FullScreenSlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F226A25E79FB60057B650 /* FullScreenSlideshowViewController.swift */; };
+		FC9F227825E79FBB0057B650 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC9F226B25E79FB70057B650 /* Info.plist */; };
+		FC9F227925E79FBB0057B650 /* ZoomAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F226C25E79FB70057B650 /* ZoomAnimatedTransitioning.swift */; };
+		FC9F227A25E79FBB0057B650 /* UIImageView+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F226D25E79FB80057B650 /* UIImageView+Tools.swift */; };
+		FC9F227B25E79FBB0057B650 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F226E25E79FB90057B650 /* InputSource.swift */; };
+		FC9F227C25E79FBB0057B650 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F226F25E79FB90057B650 /* SwiftSupport.swift */; };
+		FC9F227D25E79FBB0057B650 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F227025E79FBA0057B650 /* ActivityIndicator.swift */; };
+		FC9F227E25E79FBB0057B650 /* ImageSlideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F227125E79FBA0057B650 /* ImageSlideshow.swift */; };
+		FC9F227F25E79FBB0057B650 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F227225E79FBB0057B650 /* PageIndicator.swift */; };
 		FCA4F28B25CFB98E007A55F4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA4F28A25CFB98E007A55F4 /* SearchViewController.swift */; };
 		FCE1BBB625C019920058F792 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE1BBB525C019920058F792 /* ImageScrollView.swift */; };
 		FF25EA2125BDE2CD000CC0C4 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF25EA2025BDE2CD000CC0C4 /* DataModel.swift */; };
@@ -138,6 +151,20 @@
 		FC797DE825BE894800F882BE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		FC797DE925BE894800F882BE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FC975D4D25D55CD200869D7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FC9F226525E79FB30057B650 /* ImageSlideshowItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSlideshowItem.swift; sourceTree = "<group>"; };
+		FC9F226625E79FB40057B650 /* Bundle+Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Module.swift"; sourceTree = "<group>"; };
+		FC9F226725E79FB40057B650 /* ImageSlideshow_framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSlideshow_framework.h; sourceTree = "<group>"; };
+		FC9F226825E79FB50057B650 /* UIImage+AspectFit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+AspectFit.swift"; sourceTree = "<group>"; };
+		FC9F226925E79FB60057B650 /* PageIndicatorPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIndicatorPosition.swift; sourceTree = "<group>"; };
+		FC9F226A25E79FB60057B650 /* FullScreenSlideshowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenSlideshowViewController.swift; sourceTree = "<group>"; };
+		FC9F226B25E79FB70057B650 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC9F226C25E79FB70057B650 /* ZoomAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		FC9F226D25E79FB80057B650 /* UIImageView+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Tools.swift"; sourceTree = "<group>"; };
+		FC9F226E25E79FB90057B650 /* InputSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSource.swift; sourceTree = "<group>"; };
+		FC9F226F25E79FB90057B650 /* SwiftSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSupport.swift; sourceTree = "<group>"; };
+		FC9F227025E79FBA0057B650 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		FC9F227125E79FBA0057B650 /* ImageSlideshow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSlideshow.swift; sourceTree = "<group>"; };
+		FC9F227225E79FBB0057B650 /* PageIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		FCA4F28A25CFB98E007A55F4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FCE1BBB525C019920058F792 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		FF25EA2025BDE2CD000CC0C4 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -348,12 +375,13 @@
 		FC703D8125E0E16D00E0E798 /* InsideFolder */ = {
 			isa = PBXGroup;
 			children = (
+				FC9F226425E79F750057B650 /* InsideFolderDetails */,
+				FC9F226225E79EFD0057B650 /* FilterAction */,
 				FC62FC1B25E4E77A00D93E81 /* ScanInside */,
 				FC62FC1625E4E72600D93E81 /* AleartInside */,
 				FC703D8C25E1348700E0E798 /* InsideFolderCV */,
 				FC703D8625E0FF8F00E0E798 /* InsideFolderTV */,
 				FC703D8225E0E19A00E0E798 /* InsideFolderVC.swift */,
-				FC3EADA225E51037009A6F43 /* InsideFolderActionSheet.swift */,
 			);
 			path = InsideFolder;
 			sourceTree = "<group>";
@@ -382,6 +410,35 @@
 				FC797DE925BE894800F882BE /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		FC9F226225E79EFD0057B650 /* FilterAction */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EADA225E51037009A6F43 /* InsideFolderActionSheet.swift */,
+			);
+			path = FilterAction;
+			sourceTree = "<group>";
+		};
+		FC9F226425E79F750057B650 /* InsideFolderDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FC9F227025E79FBA0057B650 /* ActivityIndicator.swift */,
+				FC9F226625E79FB40057B650 /* Bundle+Module.swift */,
+				FC9F226A25E79FB60057B650 /* FullScreenSlideshowViewController.swift */,
+				FC9F226725E79FB40057B650 /* ImageSlideshow_framework.h */,
+				FC9F227125E79FBA0057B650 /* ImageSlideshow.swift */,
+				FC9F226525E79FB30057B650 /* ImageSlideshowItem.swift */,
+				FC9F226B25E79FB70057B650 /* Info.plist */,
+				FC9F226E25E79FB90057B650 /* InputSource.swift */,
+				FC9F227225E79FBB0057B650 /* PageIndicator.swift */,
+				FC9F226925E79FB60057B650 /* PageIndicatorPosition.swift */,
+				FC9F226F25E79FB90057B650 /* SwiftSupport.swift */,
+				FC9F226825E79FB50057B650 /* UIImage+AspectFit.swift */,
+				FC9F226D25E79FB80057B650 /* UIImageView+Tools.swift */,
+				FC9F226C25E79FB70057B650 /* ZoomAnimatedTransitioning.swift */,
+			);
+			path = InsideFolderDetails;
 			sourceTree = "<group>";
 		};
 		FCA4F28925CFB967007A55F4 /* SearchHome */ = {
@@ -609,6 +666,7 @@
 				FC5D55A825BEC8A800CDEEE4 /* Subscription screen.png in Resources */,
 				FC5D558525BEC43600CDEEE4 /* list_select_icon_final.png in Resources */,
 				FC5D558225BEC43600CDEEE4 /* grid_deselect_icon_final.png in Resources */,
+				FC9F227825E79FBB0057B650 /* Info.plist in Resources */,
 				FC5D558325BEC43600CDEEE4 /* more_icon.png in Resources */,
 				FC5D55AF25BEC8A800CDEEE4 /* heart_settings.png in Resources */,
 				FC5D55AE25BEC8A800CDEEE4 /* upgrade_button_settings.png in Resources */,
@@ -672,18 +730,24 @@
 			files = (
 				FC703D8325E0E19A00E0E798 /* InsideFolderVC.swift in Sources */,
 				FF701D7E25ADF90F0029BA84 /* CreateFolderVCHelper.swift in Sources */,
+				FC9F227E25E79FBB0057B650 /* ImageSlideshow.swift in Sources */,
 				FC797DEA25BE894800F882BE /* SettingsHelpers.swift in Sources */,
 				FC3EADA325E51037009A6F43 /* InsideFolderActionSheet.swift in Sources */,
 				FC797DEC25BE894800F882BE /* SettingsViewController.swift in Sources */,
 				FF66756A25A7284F00EBBD09 /* AppDelegate.swift in Sources */,
 				FC5FCB3E25D2BD0F00A47C95 /* SearchExtentions.swift in Sources */,
 				FF7BFA5425A7AA79009FAC7A /* ScannerVC.swift in Sources */,
+				FC9F227325E79FBB0057B650 /* ImageSlideshowItem.swift in Sources */,
+				FC9F227725E79FBB0057B650 /* FullScreenSlideshowViewController.swift in Sources */,
+				FC9F227625E79FBB0057B650 /* PageIndicatorPosition.swift in Sources */,
 				FC703D8E25E134A800E0E798 /* InsideFolderCV.swift in Sources */,
 				FC6BA9B925C5733400D30DF7 /* AlertView.swift in Sources */,
 				FC35DCDD25D1559C005178FA /* HomeCollectionView.swift in Sources */,
 				FCE1BBB625C019920058F792 /* ImageScrollView.swift in Sources */,
+				FC9F227B25E79FBB0057B650 /* InputSource.swift in Sources */,
 				FCA4F28B25CFB98E007A55F4 /* SearchViewController.swift in Sources */,
 				FC35DCDA25D15535005178FA /* HomeTableView.swift in Sources */,
+				FC9F227A25E79FBB0057B650 /* UIImageView+Tools.swift in Sources */,
 				FC62FC1D25E4E79700D93E81 /* InsideScanVC.swift in Sources */,
 				FF82136E25B47492005EE685 /* FolderGalleryVC.swift in Sources */,
 				FF82137725B478A9005EE685 /* FolderGalleryVCHelper.swift in Sources */,
@@ -692,16 +756,22 @@
 				FFE80BC625A9CB2D005A2A29 /* DocsAndFoldsCVCell.swift in Sources */,
 				FF701D4E25ACB0BD0029BA84 /* RealmModel.swift in Sources */,
 				FF7BFA1225A749DE009FAC7A /* HomeVCHelper.swift in Sources */,
+				FC9F227F25E79FBB0057B650 /* PageIndicator.swift in Sources */,
 				FFE80BBF25A9969F005A2A29 /* FolderTVCell.swift in Sources */,
+				FC9F227D25E79FBB0057B650 /* ActivityIndicator.swift in Sources */,
 				FC6BA97125C5346700D30DF7 /* ColorExtensions.swift in Sources */,
 				FF82137325B47574005EE685 /* FolderGalleryCVCell.swift in Sources */,
 				FF66756C25A7284F00EBBD09 /* SceneDelegate.swift in Sources */,
 				FF701D3A25AC6AFE0029BA84 /* EditVC.swift in Sources */,
 				FF7BFA5A25A7BCE7009FAC7A /* ScannerVCHelper.swift in Sources */,
+				FC9F227C25E79FBB0057B650 /* SwiftSupport.swift in Sources */,
+				FC9F227925E79FBB0057B650 /* ZoomAnimatedTransitioning.swift in Sources */,
 				FF7BFA0225A74427009FAC7A /* Support.swift in Sources */,
 				FFF325A925A73BED0064D4AE /* HomeVC.swift in Sources */,
+				FC9F227525E79FBB0057B650 /* UIImage+AspectFit.swift in Sources */,
 				FC69DD3725D401D500A2098B /* SearchModel.swift in Sources */,
 				FF701D4825AC76BA0029BA84 /* EditVCHelper.swift in Sources */,
+				FC9F227425E79FBB0057B650 /* Bundle+Module.swift in Sources */,
 				FC797DEB25BE894800F882BE /* SettingsTableViewCell.swift in Sources */,
 				FF25EA2125BDE2CD000CC0C4 /* DataModel.swift in Sources */,
 				FC62FC1825E4E74400D93E81 /* AleartInsideFolder.swift in Sources */,

@@ -128,7 +128,7 @@ extension UIViewController {
         }
         
         else {
-            self.showToast(message: "Document Exists", duration: 3.0, position: .bottom)
+            //self.showToast(message: "Document Exists", duration: 3.0, position: .bottom)
             realm.cancelWrite()
         }
     }
@@ -205,10 +205,15 @@ extension UIViewController {
                 try realm.commitWrite()
                 self.showToast(message: "Folder(s) Deleted", duration: 3.0, position: .bottom)
                 
-                //                DispatchQueue.main.async {
-                //                    controller.docsAndFoldsTableView.reloadData()
-                //                    controller.docsAndFoldsCollectionView.reloadData()
-                //                }
+                if controller.folderButtonSelected{
+                    DispatchQueue.main.async {
+                        controller.viewWillAppear(true)
+                    }
+                }else if controller.galleryButtonSelected{
+                    DispatchQueue.main.async {
+                        controller.viewWillAppear(true)
+                    }
+                }
                 
             } catch let error {
                 print(error.localizedDescription)
@@ -242,14 +247,16 @@ extension UIViewController {
             
             do {
                 try realm.commitWrite()
-                self.showToast(message: "Document(s) Deleted", duration: 3.0, position: .bottom)
                 
-                
-                //
-                //                DispatchQueue.main.async {
-                //                    controller.docsAndFoldsTableView.reloadData()
-                //                    controller.docsAndFoldsCollectionView.reloadData()
-                //                }
+                if controller.folderButtonSelected{
+                    DispatchQueue.main.async {
+                        controller.viewWillAppear(true)
+                    }
+                }else if controller.galleryButtonSelected{
+                    DispatchQueue.main.async {
+                        controller.viewWillAppear(true)
+                    }
+                }
                 
                 
                 
@@ -277,24 +284,26 @@ extension UIViewController {
                 try! realm.write {
                     realm.delete(obj)
                     
-                    
+                 
                     if section == "table"{
                         DispatchQueue.main.async {
                             controller.insideDocuments.removeAll()
                             controller.listButtonSelected = true
-                            controller.viewDidLoad()
+                            controller.listSelect = true
+                            controller.gridSelect = false
+                            controller.viewWillAppear(true)
                         }
                     }else if (section == "collection"){
-                        print("inside collection")
+                        //print("inside collection")
                         DispatchQueue.main.async {
                             controller.insideDocuments.removeAll()
                             controller.gridButttonSelected = true
-                           // controller.setDocumentCollectionView()
-                           // controller.insideDocuments = controller.readDocumentFromRealm(folderName: documentName, sortBy: "documentSize")
-                            controller.viewDidLoad()
-                            //controller.docsCollectionView.reloadData()
+                            controller.listSelect = false
+                            controller.gridSelect = true
+                            controller.viewWillAppear(true)
                         }
                     }
+                    
                     
                     
                 }
@@ -306,41 +315,7 @@ extension UIViewController {
         } catch let error {
                 print("error - \(error.localizedDescription)")
             }
-        
-//        let realm = try! Realm() // realm object
-//
-//        realm.beginWrite()
-//
-//        let document = realm.objects(Documents.self).filter("documentName == '\(documentName)'")
-//
-//        if documentName == document.first?.documentName {
-//
-//            realm.delete(document)
-//
-//            do {
-//                try realm.commitWrite()
-//                self.showToast(message: "Document(s) Deleted", duration: 3.0, position: .bottom)
-//
-//                if section == "table"{
-//                    DispatchQueue.main.async {
-//                        controller.docsTableView.reloadData()
-//                    }
-//                }else{
-//                    DispatchQueue.main.async {
-//                        controller.docsCollectionView.reloadData()
-//                    }
-//                }
-//
-//
-//            } catch let error {
-//                print(error.localizedDescription)
-//            }
-//        }
-//
-//        else {
-//            self.showToast(message: "No Document(s) Deleted", duration: 3.0, position: .bottom)
-//            realm.cancelWrite()
-//        }
+
     }
     
     
