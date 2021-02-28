@@ -103,7 +103,14 @@ extension InsideFolderVC:UITableViewDelegate, UITableViewDataSource{
         
         else{
             //password protected or not protected see all
-        }
+            if let insider = self.storyboard?.instantiateViewController(withIdentifier: "PageHorizontalVC") as? PageHorizontalVC {
+                insider.alldocs = insideDocuments
+                insider.itemIndex = indexPath.section
+           
+                self.navigationController?.pushViewController(insider, animated: true)
+                
+            }//end of VC
+        }//end of else
         
         
        // tableView.deselectRow(at: indexPath, animated: true)

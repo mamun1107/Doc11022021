@@ -65,6 +65,9 @@
 		FC75559725D53B4300A6FC41 /* folder_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC75559625D53B4300A6FC41 /* folder_image.png */; };
 		FC75559A25D53B4900A6FC41 /* folder_lock_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC75559925D53B4900A6FC41 /* folder_lock_image.png */; };
 		FC75559D25D53B4E00A6FC41 /* file_lock_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC75559C25D53B4E00A6FC41 /* file_lock_image.png */; };
+		FC76D3FE25EB79DF00FED67A /* PagedHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76D3FB25EB79DE00FED67A /* PagedHorizontalView.swift */; };
+		FC76D40225EB7A8800FED67A /* PageHorizontalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76D40125EB7A8800FED67A /* PageHorizontalVC.swift */; };
+		FC76D40525EB7AC400FED67A /* PageCvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76D40425EB7AC400FED67A /* PageCvCell.swift */; };
 		FC797DEA25BE894800F882BE /* SettingsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC797DE725BE894800F882BE /* SettingsHelpers.swift */; };
 		FC797DEB25BE894800F882BE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC797DE825BE894800F882BE /* SettingsTableViewCell.swift */; };
 		FC797DEC25BE894800F882BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC797DE925BE894800F882BE /* SettingsViewController.swift */; };
@@ -159,6 +162,10 @@
 		FC75559625D53B4300A6FC41 /* folder_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_image.png; sourceTree = "<group>"; };
 		FC75559925D53B4900A6FC41 /* folder_lock_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_lock_image.png; sourceTree = "<group>"; };
 		FC75559C25D53B4E00A6FC41 /* file_lock_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = file_lock_image.png; sourceTree = "<group>"; };
+		FC76D3FB25EB79DE00FED67A /* PagedHorizontalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedHorizontalView.swift; sourceTree = "<group>"; };
+		FC76D3FC25EB79DF00FED67A /* PagedHorizontalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedHorizontalView.h; sourceTree = "<group>"; };
+		FC76D40125EB7A8800FED67A /* PageHorizontalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHorizontalVC.swift; sourceTree = "<group>"; };
+		FC76D40425EB7AC400FED67A /* PageCvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCvCell.swift; sourceTree = "<group>"; };
 		FC797DE725BE894800F882BE /* SettingsHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHelpers.swift; sourceTree = "<group>"; };
 		FC797DE825BE894800F882BE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		FC797DE925BE894800F882BE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -419,6 +426,24 @@
 			path = InsideFolderCV;
 			sourceTree = "<group>";
 		};
+		FC76D3F925EB798700FED67A /* PagedHorizontalView */ = {
+			isa = PBXGroup;
+			children = (
+				FC76D3FC25EB79DF00FED67A /* PagedHorizontalView.h */,
+				FC76D3FB25EB79DE00FED67A /* PagedHorizontalView.swift */,
+			);
+			path = PagedHorizontalView;
+			sourceTree = "<group>";
+		};
+		FC76D40025EB7A4100FED67A /* InsidePageVC */ = {
+			isa = PBXGroup;
+			children = (
+				FC76D40125EB7A8800FED67A /* PageHorizontalVC.swift */,
+				FC76D40425EB7AC400FED67A /* PageCvCell.swift */,
+			);
+			path = InsidePageVC;
+			sourceTree = "<group>";
+		};
 		FC797DE625BE892800F882BE /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +482,7 @@
 		FF66755D25A7284F00EBBD09 = {
 			isa = PBXGroup;
 			children = (
+				FC76D3F925EB798700FED67A /* PagedHorizontalView */,
 				FF66756825A7284F00EBBD09 /* Doc Scanner */,
 				FF66756725A7284F00EBBD09 /* Products */,
 				EF15410FAB3334692663807E /* Pods */,
@@ -530,6 +556,7 @@
 		FFF325A525A73B960064D4AE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FC76D40025EB7A4100FED67A /* InsidePageVC */,
 				FC58E24C25E7D9EC007D6353 /* InsideDetailsVC */,
 				FC703D8125E0E16D00E0E798 /* InsideFolder */,
 				FCA4F28925CFB967007A55F4 /* SearchHome */,
@@ -728,6 +755,7 @@
 				FC58E26525E7DA23007D6353 /* ZoomAnimatedTransitioning.swift in Sources */,
 				FF701D7E25ADF90F0029BA84 /* CreateFolderVCHelper.swift in Sources */,
 				FC797DEA25BE894800F882BE /* SettingsHelpers.swift in Sources */,
+				FC76D40525EB7AC400FED67A /* PageCvCell.swift in Sources */,
 				FC3EADA325E51037009A6F43 /* InsideFolderActionSheet.swift in Sources */,
 				FC58E25A25E7DA23007D6353 /* InputSource.swift in Sources */,
 				FC797DEC25BE894800F882BE /* SettingsViewController.swift in Sources */,
@@ -735,7 +763,9 @@
 				FC5FCB3E25D2BD0F00A47C95 /* SearchExtentions.swift in Sources */,
 				FF7BFA5425A7AA79009FAC7A /* ScannerVC.swift in Sources */,
 				FC703D8E25E134A800E0E798 /* InsideFolderCV.swift in Sources */,
+				FC76D3FE25EB79DF00FED67A /* PagedHorizontalView.swift in Sources */,
 				FC6BA9B925C5733400D30DF7 /* AlertView.swift in Sources */,
+				FC76D40225EB7A8800FED67A /* PageHorizontalVC.swift in Sources */,
 				FC35DCDD25D1559C005178FA /* HomeCollectionView.swift in Sources */,
 				FCE1BBB625C019920058F792 /* ImageScrollView.swift in Sources */,
 				FCA4F28B25CFB98E007A55F4 /* SearchViewController.swift in Sources */,
