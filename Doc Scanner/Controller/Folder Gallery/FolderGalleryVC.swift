@@ -50,7 +50,7 @@ class FolderGalleryVC: UIViewController {
         self.myDocuments.removeAll()
         self.myDocuments = self.readDocumentFromRealm(folderName: self.folderName, sortBy: "documentSize")
         
-        self.setCustomNavigationBar(largeTitleColor: .black, backgoundColor: .white, tintColor: .black, title: "\(self.currentCellNumber) / \(self.totalDocuments)", preferredLargeTitle: false)
+      //  self.setCustomNavigationBar(largeTitleColor: .black, backgoundColor: .white, tintColor: .black, title: "\(self.currentCellNumber) / \(self.totalDocuments)", preferredLargeTitle: false)
     }
     
     

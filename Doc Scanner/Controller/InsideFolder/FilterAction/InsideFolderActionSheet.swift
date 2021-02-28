@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 extension InsideFolderVC{
     
@@ -16,55 +17,63 @@ extension InsideFolderVC{
         alert.overrideUserInterfaceStyle = .light
         
         alert.addAction(UIAlertAction(title: "Sort by Name", style: .default, handler: { (_) in
+            guard let primaryKey = self.primaryKeyName else {return}
             
-//            self.myFolders.removeAll()
-//            self.myFolders = self.readFolderFromRealm(sortBy: "folderName")
-//
-//            self.myDocuments.removeAll()
-//            self.myDocuments = self.readDocumentFromRealm(folderName: self.folderName, sortBy: "documentName")
-//
-//            DispatchQueue.main.async {
-//                self.docsAndFoldsTableView.reloadData()
-//                self.docsAndFoldsCollectionView.reloadData()
-//            }
+            self.insideDocuments.removeAll()
+            self.insideDocuments = self.readDocumentFromRealmForName(folderName:primaryKey, sortBy: "editabledocumentName")
+            self.refreshTVandCVDynamicly()
+            
         }))
-
+        
         alert.addAction(UIAlertAction(title: "Sort by Date", style: .default, handler: { (_) in
             
-//            self.myFolders.removeAll()
-//            self.myFolders = self.readFolderFromRealm(sortBy: "folderDateAndTime")
-//
-//            self.myDocuments.removeAll()
-//            self.myDocuments = self.readDocumentFromRealm(folderName: self.folderName, sortBy: "documentDateAndTime")
-//
-//            DispatchQueue.main.async {
-//                self.docsAndFoldsTableView.reloadData()
-//                self.docsAndFoldsCollectionView.reloadData()
-//            }
+            guard let primaryKey = self.primaryKeyName else {return}
             
-        }))
+            self.insideDocuments.removeAll()
+            self.insideDocuments = self.readDocumentFromRealm(folderName:primaryKey, sortBy: "documentDateAndTime")
+            self.refreshTVandCVDynamicly()
+            
 
+        }))
+        
         alert.addAction(UIAlertAction(title: "Sort by Size", style: .default, handler: { (_) in
             
-//            self.myFolders.removeAll()
-//            self.myFolders = self.readFolderFromRealm(sortBy: "folderName")
-//            
-//            self.myDocuments.removeAll()
-//            self.myDocuments = self.readDocumentFromRealm(folderName: self.folderName, sortBy: "documentSize")
-//            
-//            DispatchQueue.main.async {
-//                self.docsAndFoldsTableView.reloadData()
-//                self.docsAndFoldsCollectionView.reloadData()
-//            }
+            guard let primaryKey = self.primaryKeyName else {return}
+            
+            self.insideDocuments.removeAll()
+            self.insideDocuments = self.readDocumentFromRealm(folderName:primaryKey, sortBy: "documentSize")
+            self.refreshTVandCVDynamicly()
             
         }))
-
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
             print("User click Dismiss button")
         }))
-
-
+        
+        
         self.present(alert, animated: true)
     }
     
+}
+
+
+extension UIViewController{
+    
+    func readDocumentFromRealmForName(folderName: String, sortBy: String) -> [Documents] {
+        
+        let realm = try! Realm() // realm object
+        var myDocuments = [Documents]()
+        
+        let folders = realm.objects(Folders.self).filter("folderName == '\(folderName)'")
+        print(folders[0].editablefolderName!)
+        
+        for folder in folders {
+            
+            for document in folder.documents.sorted(byKeyPath: sortBy, ascending: true) {
+                
+                myDocuments.append(document)
+            }
+        }
+        return myDocuments
+    }
 }

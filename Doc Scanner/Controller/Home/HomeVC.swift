@@ -40,7 +40,9 @@ class HomeVC: UIViewController {
     @IBOutlet weak var folderButton: UIButton!
     @IBOutlet weak var bottomView: UIView!
     
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return.lightContent
+    }
     
     //-------------------------------------------------------------------------------------------------------------------------------------------------
     
@@ -49,13 +51,17 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+            //preferredStatusBarStyle
+        }
        // self.bottomView.isHidden = true
         
         self.galleryButtonSelected = false
         self.folderButtonSelected = true
-        //self.title = "Library"
+        self.title = "Library"
         
-        self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
+        //self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
         
         self.setViewCustomColor(view: self.view, color: UIColor(hex: "EEEEEE"))
         
@@ -93,7 +99,7 @@ class HomeVC: UIViewController {
         super.viewDidAppear(true)
     
         
-        self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
+        //self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
         
         self.setRefreshTVandCV(tvSortBy: "folderDateAndTime", cvSortBy: "documentSize")
         
@@ -111,6 +117,10 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print("after ")
+        //self.navigationController?.navigationBar
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+       // self.navigationController?.navigationBar.titleTextAttributes = preferredStatusBarStyle
+        
     
         self.bottomView.setNeedsLayout()
         self.bottomView.layoutIfNeeded()
@@ -120,7 +130,7 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         
         
-       self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
+       //self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
         
         self.setRefreshTVandCV(tvSortBy: "folderDateAndTime", cvSortBy: "documentSize")
         
@@ -384,11 +394,15 @@ class HomeVC: UIViewController {
         if let createSearchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController {
             createSearchVC.totalFolders = self.myFolders
             createSearchVC.totalDocuments = self.myDocuments
+   
+            let transition = CATransition()
+            transition.duration = 0.6
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
+            transition.type = CATransitionType.moveIn
+            transition.subtype = CATransitionSubtype.fromTop
+            navigationController?.view.layer.add(transition, forKey: nil)
             
-            print("collection", searchImageCollection.count)
-           // self.navigationController?.present(createSearchVC, animated: false, completion: nil)
-            
-            self.navigationController?.pushViewController(createSearchVC, animated: true)
+            self.navigationController?.pushViewController(createSearchVC, animated: false)
         }
         
 //        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)

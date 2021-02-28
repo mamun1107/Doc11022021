@@ -31,7 +31,6 @@ class AleartsInsideFolder {
                 AleartsInsideFolder().setInsideDocumentRename(controller: controller, folderName: folderName, passwordProtection:passwordProtected, from:from, section:section)
                 
             }
-            // Alerts().setRename(controller: controller, folderName: folderName, passwordProtection:passwordProtected, from:from)
         }))
         
         
@@ -63,7 +62,8 @@ class AleartsInsideFolder {
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
             
             if passwordProtected == true{
-                //                (from == "folder") ? Alerts().showGetPassAlert(controller: controller, currentPassword: controller.myFolders[index_option].password!, index: index_option, from: "folder", for_using:"delete", passwordProtected:passwordProtected) : Alerts().showGetPassAlert(controller: controller, currentPassword: controller.myDocuments[index_option].password!, index: index_option, from: "doc", for_using:"delete", passwordProtected:passwordProtected)
+                
+                AleartsInsideFolder().showGetPassAlert(controller: controller, currentPassword: controller.insideDocuments[index_option].password!, index: index_option, from: "doc", for_using:"delete", passwordProtected:passwordProtected, section: section)
                 
             }else {
                 print("hi....")

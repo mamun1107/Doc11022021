@@ -50,7 +50,7 @@ class EditVC: UIViewController {
         //self.setEditImage(imageView: self.editImageView, image: self.editImage, contentMode: .scaleAspectFit)
         self.imageScrollView.set(image:self.editImage)
         
-        self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "", preferredLargeTitle: false)
+       // self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "", preferredLargeTitle: false)
         
         //self.setNavigationElements()
         //self.editImageView.enableZoom()

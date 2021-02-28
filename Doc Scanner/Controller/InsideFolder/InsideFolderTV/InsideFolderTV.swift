@@ -5,6 +5,7 @@
 //  Created by LollipopMacbook on 20/2/21.
 //
 
+
 import Foundation
 import UIKit
 
@@ -20,7 +21,17 @@ extension InsideFolderVC:UITableViewDelegate, UITableViewDataSource{
     
     // MARK: - Number Of Section
     
-    func numberOfSections(in tableView: UITableView) -> Int { self.insideDocuments.count }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        if searching{
+            return insideFilterDocuments.count
+        }else{
+            return insideDocuments.count
+        }
+        
+        
+        
+    }
     
     
     
@@ -31,19 +42,36 @@ extension InsideFolderVC:UITableViewDelegate, UITableViewDataSource{
         
         cell.cellDelegate = self
         
-        if self.insideDocuments[indexPath.section].isPasswordProtected == true{
-            cell.docsAndFoldsImageView.image = UIImage(named: "file_lock_image")
+        if searching{
+            
+            if self.insideFilterDocuments[indexPath.section].isPasswordProtected == true{
+                cell.docsAndFoldsImageView.image = UIImage(named: "file_lock_image")
+                
+            }else{
+                
+                cell.docsAndFoldsImageView.image = UIImage(data: self.insideFilterDocuments[indexPath.section].documentData ?? Data())
+                
+            }
+            cell.nameLabel.text = self.insideFilterDocuments[indexPath.section].editabledocumentName ?? ""
+            cell.numberOfItemsLabel.text = "1 Document"
+            cell.optionButton.tag = indexPath.section
             
         }else{
-            
-            cell.docsAndFoldsImageView.image = UIImage(data: self.insideDocuments[indexPath.section].documentData ?? Data())
+            if self.insideDocuments[indexPath.section].isPasswordProtected == true{
+                cell.docsAndFoldsImageView.image = UIImage(named: "file_lock_image")
+                
+            }else{
+                
+                cell.docsAndFoldsImageView.image = UIImage(data: self.insideDocuments[indexPath.section].documentData ?? Data())
+                
+            }
+            cell.nameLabel.text = self.insideDocuments[indexPath.section].editabledocumentName ?? ""
+            cell.numberOfItemsLabel.text = "1 Document"
+            cell.optionButton.tag = indexPath.section
             
         }
-        cell.nameLabel.text = self.insideDocuments[indexPath.section].editabledocumentName ?? ""
-        cell.numberOfItemsLabel.text = "1 Document"
-        cell.optionButton.tag = indexPath.section
         
-        
+ 
         return self.setFolderCell(cell: cell)
     }
     
@@ -53,24 +81,53 @@ extension InsideFolderVC:UITableViewDelegate, UITableViewDataSource{
         
         print(indexPath.section)
         
-        if let editVC = self.storyboard?.instantiateViewController(withIdentifier: "editVC") as? EditVC {
-            
-            if self.insideDocuments[indexPath.section].isPasswordProtected == false {
-                editVC.editImage = UIImage(data: self.insideDocuments[indexPath.section].documentData ?? Data()) ?? UIImage()
-                editVC.currentDocumentName = self.insideDocuments[indexPath.section].documentName ?? String()
+        if searching{
+            // if password protected
+            if let editVC = self.storyboard?.instantiateViewController(withIdentifier: "editVC") as? EditVC {
                 
-                self.navigationController?.pushViewController(editVC, animated: true)
-            }else{
-                print("true")
-                AleartsInsideFolder().showGetPassAlert(controller: self, currentPassword: self.insideDocuments[indexPath.section].password!, index: indexPath.section, from: "doc", for_using: "password", passwordProtected: true, section: "table")
+                if self.insideFilterDocuments[indexPath.section].isPasswordProtected == false {
+                    editVC.editImage = UIImage(data: self.insideFilterDocuments[indexPath.section].documentData ?? Data()) ?? UIImage()
+                    editVC.currentDocumentName = self.insideFilterDocuments[indexPath.section].documentName ?? String()
+                    self.navigationController?.pushViewController(editVC, animated: true)
+                    
+                }
+                //else not password protected
+                else{
+                    AleartsInsideFolder().showGetPassAlert(controller: self, currentPassword: self.insideFilterDocuments[indexPath.section].password!, index: indexPath.section, from: "doc", for_using: "password", passwordProtected: true, section: "table")
+                    
+                }
                 
-            }
+            }//ending  EditVC
             
-            
-            
+        }//ending searching section
+        
+        else{
+            //password protected or not protected see all
         }
+        
+        
+       // tableView.deselectRow(at: indexPath, animated: true)
+
+//        let fullScreenController = FullScreenSlideshowViewController()
+//        fullScreenController.inputs = model.map { $0.inputSource }
+//        fullScreenController.initialPage = indexPath.section
+//
+//        if let cell = tableView.cellForRow(at: indexPath), let imageView = cell.imageView {
+//            slideshowTransitioningDelegate = ZoomAnimatedTransitioningDelegate(imageView: imageView, slideshowController: fullScreenController)
+//            fullScreenController.modalPresentationStyle = .custom
+//            fullScreenController.transitioningDelegate = slideshowTransitioningDelegate
+//        }
+//
+//        fullScreenController.slideshow.currentPageChanged = { [weak self] page in
+//            if let cell = tableView.cellForRow(at: IndexPath(row: page, section: 0)), let imageView = cell.imageView {
+//                self?.slideshowTransitioningDelegate?.referenceImageView = imageView
+//            }
+//        }
+//
+//        present(fullScreenController, animated: true, completion: nil)
     }
-    
+        
+
     
     // MARK: - Height For Row At
     
@@ -119,10 +176,11 @@ extension InsideFolderVC{
     }
     
     func setinsideDocumentTableView() {
+        readDataforModelDetails()
         
         self.docsTableView.register(UINib(nibName: "FolderTVCell", bundle: nil), forCellReuseIdentifier: "folderCell")
         
-        self.docsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height, width: view.frame.width - 20, height: (view.frame.height - (self.bottomView.frame.height + 5 )))
+        self.docsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height + 100, width: view.frame.width - 20, height: (view.frame.height - (self.bottomView.frame.height + 5 )))
         
         self.docsTableView.backgroundColor = UIColor(hex: "EEEEEE")
         
@@ -143,7 +201,12 @@ extension InsideFolderVC:CellDelegateTV{
     
     func optionButtonTV(index: Int) {
         // print("inside tableView cell", index)
-        AleartsInsideFolder().showOptionActionSheet(controller:self, folderName: self.insideDocuments[index].documentName ?? "", from: "doc", passwordProtected:self.insideDocuments[index].isPasswordProtected,index_option:index, section:"table")
+        if searching{
+            AleartsInsideFolder().showOptionActionSheet(controller:self, folderName: self.insideFilterDocuments[index].documentName ?? "", from: "doc", passwordProtected:self.insideFilterDocuments[index].isPasswordProtected,index_option:index, section:"table")
+        }else{
+            AleartsInsideFolder().showOptionActionSheet(controller:self, folderName: self.insideDocuments[index].documentName ?? "", from: "doc", passwordProtected:self.insideDocuments[index].isPasswordProtected,index_option:index, section:"table")
+        }
+       
     }
 }
 

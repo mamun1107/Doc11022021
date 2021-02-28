@@ -17,7 +17,7 @@ extension HomeVC: UITextFieldDelegate {
         
         // MARK:- Selection
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(selection))
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(selection))
         
         
         // MARK:- Settings
@@ -100,7 +100,7 @@ extension HomeVC: UITextFieldDelegate {
         
         self.docsAndFoldsTableView.register(UINib(nibName: "FolderTVCell", bundle: nil), forCellReuseIdentifier: "folderCell")
         
-        self.docsAndFoldsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height, width: view.frame.width - 20, height: (view.frame.height - (bottomView.frame.height)))
+        self.docsAndFoldsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height + 100, width: view.frame.width - 20, height: (view.frame.height - (bottomView.frame.height)))
         
         self.docsAndFoldsTableView.backgroundColor = UIColor(hex: "EEEEEE")
         
@@ -149,7 +149,7 @@ extension HomeVC: UITextFieldDelegate {
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
-        layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        layout.sectionInset = UIEdgeInsets(top: 65, left: 15, bottom: 15, right: 15)
         
         self.docsAndFoldsCollectionView = UICollectionView(frame: CGRect(x: topBarStackView.frame.minX, y: topBarStackView.frame.height, width: view.frame.width, height: view.frame.height - (bottomView.frame.height)), collectionViewLayout: layout)
         
@@ -211,28 +211,28 @@ extension HomeVC: UITextFieldDelegate {
     
     // MARK: - Set Filter Action Sheet
     
-    func showSimpleActionSheet(controller: UIViewController) {
-        let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Approve", style: .default, handler: { (_) in
-            print("User click Approve button")
-        }))
-
-        alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
-            print("User click Edit button")
-        }))
-
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-            print("User click Delete button")
-        }))
-
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { (_) in
-            print("User click Dismiss button")
-        }))
-
-        controller.present(alert, animated: true, completion: {
-            print("completion block")
-        })
-    }
+//    func showSimpleActionSheet(controller: UIViewController) {
+//        let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
+//        alert.addAction(UIAlertAction(title: "Approve", style: .default, handler: { (_) in
+//            print("User click Approve button")
+//        }))
+//
+//        alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
+//            print("User click Edit button")
+//        }))
+//
+//        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+//            print("User click Delete button")
+//        }))
+//
+//        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { (_) in
+//            print("User click Dismiss button")
+//        }))
+//
+//        controller.present(alert, animated: true, completion: {
+//            print("completion block")
+//        })
+//    }
     
     func setActionSheet() {
         
@@ -245,7 +245,7 @@ extension HomeVC: UITextFieldDelegate {
             self.myFolders = self.readFolderFromRealm(sortBy: "folderName")
             
             self.myDocuments.removeAll()
-            self.myDocuments = self.readDocumentFromRealm(folderName: self.folderName, sortBy: "documentName")
+            self.myDocuments = self.readDocumentFromRealm(folderName: self.folderName, sortBy: "editabledocumentName")
             
             DispatchQueue.main.async {
                 self.docsAndFoldsTableView.reloadData()

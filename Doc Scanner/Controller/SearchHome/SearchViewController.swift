@@ -31,7 +31,8 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        
+        self.title = "Search"
         Extention.designDisplayMood(controller:self)
         tableViewinit()
         self.searchBar.delegate = self
@@ -51,15 +52,15 @@ class SearchViewController: UIViewController {
         self.tableView.separatorStyle = .none
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+//    }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.setNavigationBarHidden(false, animated: animated)
+//    }
     
     func insertSearchData(){
         
@@ -134,8 +135,7 @@ extension SearchViewController: UISearchBarDelegate{
         searchBar.text = ""
         tableView.reloadData()
         self.navigationController?.popToRootViewController(animated: true)
-        //self.navigationController?.popViewController(animated: true)
-        //self.dismiss(animated: true, completion: nil)
+    
         
     }
 }
