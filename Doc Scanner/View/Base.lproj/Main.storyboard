@@ -1519,6 +1519,7 @@
                                                         </constraints>
                                                         <state key="normal" image="share"/>
                                                         <connections>
+                                                            <action selector="shareButtonClicked:" destination="eEu-HA-vro" eventType="touchUpInside" id="pA1-s0-yBC"/>
                                                             <action selector="sharePressed:" destination="fG1-5T-OqP" eventType="touchUpInside" id="D8d-SL-fqS"/>
                                                         </connections>
                                                     </button>
@@ -1551,6 +1552,7 @@
                                                         <state key="normal" image="signature"/>
                                                         <connections>
                                                             <action selector="signature:" destination="fG1-5T-OqP" eventType="touchUpInside" id="DSA-68-y9E"/>
+                                                            <action selector="signitureButtonClicked:" destination="eEu-HA-vro" eventType="touchUpInside" id="gNA-Dk-qty"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="XDN-R1-Cql">
@@ -1579,12 +1581,13 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="zYd-9K-R2n" secondAttribute="height" multiplier="1:1" id="EfF-Gv-DL0"/>
                                                         </constraints>
-                                                        <state key="normal" image="edit"/>
+                                                        <state key="normal" image="rotate"/>
                                                         <connections>
                                                             <action selector="edit:" destination="fG1-5T-OqP" eventType="touchUpInside" id="Nc0-Yi-Tre"/>
+                                                            <action selector="rotateButtonClicked:" destination="eEu-HA-vro" eventType="touchUpInside" id="7Fr-S7-O0K"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="HWI-Nt-vUx">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="HWI-Nt-vUx">
                                                         <rect key="frame" x="0.0" y="34.333333333333329" width="97.666666666666671" height="13.333333333333336"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1610,12 +1613,13 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Z8F-hL-n30" secondAttribute="height" multiplier="1:1" id="7yx-8P-M2w"/>
                                                         </constraints>
-                                                        <state key="normal" image="addScan"/>
+                                                        <state key="normal" image="edit"/>
                                                         <connections>
                                                             <action selector="addScan:" destination="fG1-5T-OqP" eventType="touchUpInside" id="P9B-X3-kB0"/>
+                                                            <action selector="editbuttonclicked:" destination="eEu-HA-vro" eventType="touchUpInside" id="f4t-Rc-XYU"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="RTR-Kb-YOB">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="RTR-Kb-YOB">
                                                         <rect key="frame" x="0.0" y="34.333333333333329" width="97.333333333333329" height="13.333333333333336"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

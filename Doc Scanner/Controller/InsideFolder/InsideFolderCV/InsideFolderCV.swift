@@ -66,7 +66,7 @@ extension InsideFolderVC : UICollectionViewDataSource, UICollectionViewDelegate,
     //collection did select method
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        //print(indexPath.row)
         
         if searching{
             // if password protected
@@ -90,30 +90,18 @@ extension InsideFolderVC : UICollectionViewDataSource, UICollectionViewDelegate,
         
         //if not searching
         else{
+            if let insider = self.storyboard?.instantiateViewController(withIdentifier: "PageHorizontalVC") as? PageHorizontalVC {
+                insider.alldocs = insideDocuments
+                insider.itemIndex = indexPath.row
+           
+                self.navigationController?.pushViewController(insider, animated: true)
+                
+            }//end of VC
             
         }//end of all section
         
         
-        //collectionView.deselectRow(at: indexPath, animated: true)
-//        if let fullScreenController = self.storyboard?.instantiateViewController(withIdentifier: "FullScreenSlideshowViewController") as? FullScreenSlideshowViewController {
-//        let fullScreenController = FullScreenSlideshowViewController()
-//            fullScreenController.inputs = model.map { $0.inputSource }
-//            fullScreenController.initialPage = indexPath.row
-//        let cell = docsCollectionView.dequeueReusableCell(withReuseIdentifier: "documentCell", for: indexPath) as! DocsAndFoldsCVCell
-//        //
-//        slideshowTransitioningDelegate = ZoomAnimatedTransitioningDelegate(imageView: cell.docsAndFoldsImageView, slideshowController: fullScreenController)
-//                fullScreenController.modalPresentationStyle = .custom
-//                fullScreenController.transitioningDelegate = slideshowTransitioningDelegate
-//            //}
-//
-////            fullScreenController.slideshow.currentPageChanged = { [weak self] page in
-////                if let cell = tableView.cellForRow(at: IndexPath(row: page, section: 0)), let imageView = cell.imageView {
-////                    self?.slideshowTransitioningDelegate?.referenceImageView = imageView
-////                }
-////            }
-//            present(fullScreenController, animated: false, completion: nil)
-        
-}
+}//end collection didselectMethod
     
     
     
