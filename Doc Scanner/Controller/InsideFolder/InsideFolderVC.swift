@@ -59,6 +59,16 @@ class InsideFolderVC: UIViewController {
     //View DidLoad
     
     
+    @IBOutlet weak var bottomViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var bottomViewImageHeight: NSLayoutConstraint!
+    
+
+    
+    @IBOutlet weak var bottomImage: UIImageView!
+    
+    @IBOutlet weak var bottomButtonHeightwithSafearea: NSLayoutConstraint!
+    
     let searchBar = UISearchBar()
     var searching:Bool = false
 
@@ -66,6 +76,10 @@ class InsideFolderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = titleHeader
+        let modelName = UIDevice.modelName
+        //print(modelName)
+        customDesignUsingDeviceModel(modelName:modelName)
+        self.setViewCustomColor(view: self.view, color: UIColor(hex: "EEEEEE"))
         self.searchBar.delegate = self
         self.initVC()
         self.insideDocuments.removeAll()
@@ -85,9 +99,30 @@ class InsideFolderVC: UIViewController {
         
     }
     
+    
+    func customDesignUsingDeviceModel(modelName:String){
+       // iPhone 7
+        if modelName == "iPhone 7"{
+            bottomButtonHeightwithSafearea.constant = 30
+            bottomViewHeight.constant = 50
+            bottomViewImageHeight.constant = 40
+            bottomImage.contentMode = .scaleToFill
+  
+            
+            
+        }else{
+            bottomViewHeight.constant = 80
+            bottomViewImageHeight.constant = 72
+            bottomButtonHeightwithSafearea.constant = 15
+        
+        }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         print("will appear")
         //self.view.endEditing(true)
+        self.setViewCustomColor(view: self.view, color: UIColor(hex: "EEEEEE"))
         self.bottomView.setNeedsLayout()
         self.bottomView.layoutIfNeeded()
         self.navigationController?.hidesBottomBarWhenPushed = true

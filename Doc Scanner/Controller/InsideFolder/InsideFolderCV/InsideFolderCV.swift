@@ -93,7 +93,7 @@ extension InsideFolderVC : UICollectionViewDataSource, UICollectionViewDelegate,
             if let insider = self.storyboard?.instantiateViewController(withIdentifier: "PageHorizontalVC") as? PageHorizontalVC {
                 insider.alldocs = insideDocuments
                 insider.itemIndex = indexPath.row
-           
+                insider.takePrimaryKey = primaryKeyName
                 self.navigationController?.pushViewController(insider, animated: true)
                 
             }//end of VC

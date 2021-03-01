@@ -42,9 +42,8 @@ class EditVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      //  self.navigationController?.isToolbarHidden = false
+      //self.navigationController?.isToolbarHidden = false
         self.navigationController?.hidesBottomBarWhenPushed = true
-         
         self.addImageScrollView()
        // self.setViewCustomColor(view: self.view, color: UIColor(hex: "EBEBEB"))
         //self.setEditImage(imageView: self.editImageView, image: self.editImage, contentMode: .scaleAspectFit)
@@ -89,11 +88,15 @@ class EditVC: UIViewController {
     // MARK: Share Pressed
     
     @IBAction func sharePressed(_ sender: UIButton) {
-        print(#function)
         
+        
+        print(#function)
+//        let activityController = UIActivityViewController(activityItems: [shareText, qrImage], applicationActivities: nil)
+//        
+//        self.present(activityController, animated: true, completion: nil)
         let shareVC = UIActivityViewController(activityItems: [self.editImage], applicationActivities: nil)
         
-        self.present(shareVC, animated: true)
+        self.present(shareVC, animated: true,completion: nil)
     }
     
     

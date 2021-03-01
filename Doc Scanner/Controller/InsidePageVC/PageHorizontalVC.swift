@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FMPhotoPicker
 //import PagedHorizontalView
 
 class PageHorizontalVC: UIViewController {
@@ -16,26 +17,56 @@ class PageHorizontalVC: UIViewController {
     var alldocs = [Documents]()
     var itemIndex:Int = 0
     var rotationCounter: Int = 0
+    
+    var takePrimaryKey:String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setViewCustomColor(view: self.horizontalView, color: UIColor(hex: "EEEEEE"))
+        self.horizontalView.collectionView.backgroundColor = UIColor(hex:"EEEEEE")
         horizontalView.tempIndex = itemIndex
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //print("hello")
+        self.alldocs.removeAll()
+        guard let primaryKey = self.takePrimaryKey else {return}
+        self.alldocs = self.readDocumentFromRealmForName(folderName: primaryKey, sortBy: "editabledocumentName")
+        DispatchQueue.main.async {
+            self.horizontalView.collectionView.reloadData()
+            //self.horizontalView.reloadInputViews()
+        }
+        
+    }
   
     @IBAction func editbuttonclicked(_ sender: UIButton) {
         print(horizontalView.tempIndex)
-    }
-    
-    
-    @IBAction func rotateButtonClicked(_ sender: UIButton) {
+        if self.alldocs[horizontalView.tempIndex].isPasswordProtected == true{
+            showMessageToUser(title: "Alert", msg: "File is password protected")
+        }else{
+            let editImage:UIImage = UIImage(data: self.alldocs[horizontalView.tempIndex].documentData ?? Data()) ?? UIImage()
+            let config = FMPhotoPickerConfig()
+            
+            let editor = FMImageEditorViewController(config: config, sourceImage: editImage)
+            editor.delegate = self
+            
+            self.present(editor, animated: true)
+        }
         
-        let insideVcImage:UIImage = UIImage(data: self.alldocs[horizontalView.tempIndex].documentData ?? Data()) ?? UIImage()
-//        let editObject = EditVC()
-//        editObject.editImage = insideVcImage
-//        editObject.imageScrollView = imageScrollView1
-        self.setImageRotation(temp:insideVcImage)
+    }
+
+    
+    
+    @IBAction func deleteButtonClicked(_ sender: UIButton) {
+        
+        if self.alldocs[horizontalView.tempIndex].isPasswordProtected == true{
+            showMessageToUser(title: "Alert", msg: "File is password protected")
+        }else{
+            UIViewController().deleteInsidePagehorizontalDocumentFromRealm(documentName: self.alldocs[horizontalView.tempIndex].documentName!, controller: self)
+        }
+
     }
     
     
@@ -70,41 +101,26 @@ extension PageHorizontalVC : UICollectionViewDataSource {
         return cell
     }
 }
-extension PageHorizontalVC{
+
+
+
+extension PageHorizontalVC:FMImageEditorViewControllerDelegate {
     
-    func setImageRotation(temp:UIImage) {
+    
+    func fmImageEditorViewController(_ editor: FMImageEditorViewController, didFinishEdittingPhotoWith photo: UIImage) {
         
-        self.rotationCounter += 1
-        
-        if self.rotationCounter == 1 {
-           // print("prinnt1")
-            //self.editImageView.image = UIImage(cgImage: self.editImage.cgImage!, scale: 1, orientation: .right)
-           // self.imageScrollView.set(image:UIImage(cgImage: temp as! CGImage, scale: 1, orientation: .right))
-        }
-        
-        else if self.rotationCounter == 2 {
-            //print("prinnt2")
-           
-            //self.imageScrollView.set(image:UIImage(cgImage: temp as! CGImage, scale: 1, orientation: .down))
+        self.dismiss(animated: false) { [self] in
             
-            //self.editImageView.image = UIImage(cgImage: self.editImage.cgImage!, scale: 1, orientation: .down)
-        }
-        
-        else if self.rotationCounter == 3 {
-            //print("prinnt3")
-           // self.imageScrollView.set(image:UIImage(cgImage: temp as! CGImage, scale: 1, orientation: .left))
-            
-            //self.editImageView.image = UIImage(cgImage: self.editImage.cgImage!, scale: 1, orientation: .left)
-        }
-        
-        else {
-           // print("prinnt4")
-            
-            //self.editImageView.image = UIImage(cgImage: self.editImage.cgImage!, scale: 1, orientation: .up)
-           // self.imageScrollView.set(image:UIImage(cgImage: self.editImage.cgImage!, scale: 1, orientation: .up))
-            
-            self.rotationCounter = 0
+            if let imageData = photo.jpegData(compressionQuality: 0.9) {
+                
+                guard let filenameKey = self.takePrimaryKey else {return}
+                
+                self.updateDocumentToRealm(folderName: filenameKey, currentDocumentName: self.alldocs[horizontalView.tempIndex].documentName!, newDocumentName: "DocMod", newDocumentData: imageData, newDocumentSize: Int(imageData.getSizeInMB()))
+                
+                //self.navigationController?.popToRootViewController(animated: true)
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
-
+    
 }

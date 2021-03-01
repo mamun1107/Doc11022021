@@ -99,8 +99,16 @@ extension HomeVC: UITextFieldDelegate {
     func setFolderTableView() {
         
         self.docsAndFoldsTableView.register(UINib(nibName: "FolderTVCell", bundle: nil), forCellReuseIdentifier: "folderCell")
+        if UIDevice.modelName == "iPhone 7"{
+            self.docsAndFoldsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height + 70 , width: view.frame.width - 20, height: (view.frame.height - (bottomView.frame.height)))
+   
+        }else{
+            self.docsAndFoldsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height + 100, width: view.frame.width - 20, height: (view.frame.height - (bottomView.frame.height)))
+        }
         
-        self.docsAndFoldsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height + 100, width: view.frame.width - 20, height: (view.frame.height - (bottomView.frame.height)))
+      //  self.docsAndFoldsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height + 100, width: view.frame.width - 20, height: (view.frame.height - (bottomView.frame.height)))
+        
+        
         
         self.docsAndFoldsTableView.backgroundColor = UIColor(hex: "EEEEEE")
         

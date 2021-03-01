@@ -69,5 +69,7 @@
 	<false/>
 	<key>User Interface Style</key>
 	<string>Light</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Our application needs permission to write photos...</string>
 </dict>
 </plist>

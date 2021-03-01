@@ -46,8 +46,17 @@ class HomeVC: UIViewController {
     
     //-------------------------------------------------------------------------------------------------------------------------------------------------
     
+    @IBOutlet weak var bottomViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var bottomViewImageHeight: NSLayoutConstraint!
+    
+
+    
+    @IBOutlet weak var bottomImage: UIImageView!
+    
+    @IBOutlet weak var bottomButtonHeightwithSafearea: NSLayoutConstraint!
     // MARK: View Did Load
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +65,9 @@ class HomeVC: UIViewController {
             //preferredStatusBarStyle
         }
        // self.bottomView.isHidden = true
+        let modelName = UIDevice.modelName
+        print(modelName)
+        customDesignUsingDeviceModel(modelName:modelName)
         
         self.galleryButtonSelected = false
         self.folderButtonSelected = true
@@ -102,8 +114,26 @@ class HomeVC: UIViewController {
         //self.setCustomNavigationBar(largeTitleColor: UIColor.black, backgoundColor: UIColor.white, tintColor: UIColor.black, title: "Library", preferredLargeTitle: true)
         
         self.setRefreshTVandCV(tvSortBy: "folderDateAndTime", cvSortBy: "documentSize")
+     
+    }
+    
+    
+    func customDesignUsingDeviceModel(modelName:String){
+       // iPhone 7
+        if modelName == "iPhone 7"{
+            bottomButtonHeightwithSafearea.constant = 30
+            bottomViewHeight.constant = 50
+            bottomViewImageHeight.constant = 40
+            bottomImage.contentMode = .scaleToFill
+  
+            
+            
+        }else{
+            bottomViewHeight.constant = 80
+            bottomViewImageHeight.constant = 72
+            bottomButtonHeightwithSafearea.constant = 15
         
-        //self.showToast(message: "Synced", duration: 1.0, position: .center)
+        }
     }
     
     
@@ -163,57 +193,7 @@ class HomeVC: UIViewController {
         print(#function)
         
         // MARK: - List Button Selected
-        
-        //        if !self.docsAndFoldsTableView.isHidden {
-        //
-        //            self.docsAndFoldsTableView.isEditing = !self.docsAndFoldsTableView.isEditing
-        //
-        //            if self.docsAndFoldsTableView.isEditing {
-        //
-        //                self.navigationItem.rightBarButtonItem?.title = "Delete"
-        //            }
-        //            else {
-        //
-        //                self.navigationItem.rightBarButtonItem?.title = "Select"
-        //
-        //                if !mySelectedFolder.isEmpty {
-        //
-        //                    for deleteFolder in mySelectedFolder {
-        //
-        //                        self.deleteFolderFromRealm(folderName: deleteFolder)
-        //
-        //                        self.myFolders.removeAll()
-        //                        self.myFolders = self.readFolderFromRealm(sortBy: "folderDateAndTime")
-        //                    }
-        //
-        //                    self.mySelectedFolder.removeAll()
-        //
-        //                    DispatchQueue.main.async {
-        //                        self.docsAndFoldsTableView.reloadData()
-        //                    }
-        //                }
-        //
-        //
-        //                if !self.mySelectedDocument.isEmpty {
-        //
-        //                    for deleteDocument in mySelectedDocument {
-        //
-        //                        self.deleteDocumentFromRealm(documentName: deleteDocument)
-        //
-        //                        self.myDocuments.removeAll()
-        //                        self.myDocuments = self.readDocumentFromRealm(folderName: self.folderName, sortBy: "documentSize")
-        //                    }
-        //
-        //                    self.mySelectedDocument.removeAll()
-        //
-        //                    DispatchQueue.main.async {
-        //                        self.docsAndFoldsTableView.reloadData()
-        //                    }
-        //                }
-        //            }
-        //        }
-        
-        
+      
         
         //-------------------------------------------------------------------------------------------------------------------------------------------------
         
@@ -233,43 +213,7 @@ class HomeVC: UIViewController {
                 
                 self.navigationItem.rightBarButtonItem?.title = "Select"
                 
-                //                if !self.mySelectedDocument.isEmpty {
-                //                    print(self.mySelectedDocument)
-                //                    for deleteDocument in mySelectedDocument {
-                //                        print("for loop")
-                //                        self.deleteDocumentFromRealm(documentName: deleteDocument)
-                //                    }
-                //
-                //                    self.mySelectedDocument.removeAll()
-                //
-                //                    //self.myDocuments.removeAll()
-                //                    //self.myDocuments = self.readDocumentFromRealm(folderName: self.folderName, sortBy: "documentSize")
-                //
-                //                    self.setRefreshTVandCV(tvSortBy: "folderDateAndTime", cvSortBy: "documentSize")
-                //                    DispatchQueue.main.async {
-                //                        print("reload data")
-                //                        self.docsAndFoldsCollectionView.reloadData()
-                //                    }
-                //                }
-                
-                
-                //                if !self.mySelectedFolder.isEmpty {
-                //
-                //                    for deleteFolder in mySelectedFolder {
-                //
-                //                        self.deleteFolderFromRealm(folderName: deleteFolder)
-                //                    }
-                //
-                //                    self.mySelectedFolder.removeAll()
-                //
-                //                    //self.myFolders.removeAll()
-                //                    //self.myFolders = self.readFolderFromRealm(sortBy: "folderDateAndTime")
-                //
-                //                    self.setRefreshTVandCV(tvSortBy: "folderDateAndTime", cvSortBy: "documentSize")
-                //                    DispatchQueue.main.async {
-                //                        self.docsAndFoldsCollectionView.reloadData()
-                //                    }
-                //                }
+             
             }
         }
     }

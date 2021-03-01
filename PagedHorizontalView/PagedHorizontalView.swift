@@ -20,18 +20,18 @@ open class PagedHorizontalView: UIView {
     }
 
     /// Represents the next button property.
-    @IBOutlet open weak var nextButton: UIButton? {
-        didSet {
-            nextButton?.addTarget(self, action: #selector(PagedHorizontalView.goToNextPage(_:)), for: .touchUpInside)
-        }
-    }
-
-    /// Represents the previous button property.
-    @IBOutlet open weak var previousButton: UIButton? {
-        didSet {
-            previousButton?.addTarget(self, action: #selector(PagedHorizontalView.goToPreviousPage(_:)), for: .touchUpInside)
-        }
-    }
+//    @IBOutlet open weak var nextButton: UIButton? {
+//        didSet {
+//            nextButton?.addTarget(self, action: #selector(PagedHorizontalView.goToNextPage(_:)), for: .touchUpInside)
+//        }
+//    }
+//
+//    /// Represents the previous button property.
+//    @IBOutlet open weak var previousButton: UIButton? {
+//        didSet {
+//            previousButton?.addTarget(self, action: #selector(PagedHorizontalView.goToPreviousPage(_:)), for: .touchUpInside)
+//        }
+//    }
 
     /// Represents the collection view property.
     @IBOutlet open weak var collectionView: UICollectionView! {

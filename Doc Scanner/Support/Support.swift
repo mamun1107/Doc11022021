@@ -320,6 +320,39 @@ extension UIViewController {
     
     
     
+    func deleteInsidePagehorizontalDocumentFromRealm(documentName: String, controller:PageHorizontalVC) {
+        
+        do {
+            let realm = try Realm()
+            
+            if let obj = realm.objects(Documents.self).filter("documentName == '\(documentName)'").first {
+                
+                //Delete must be perform in a write transaction
+                
+                try! realm.write {
+                    realm.delete(obj)
+                    
+                    DispatchQueue.main.async {
+                       // controller.horizontalView.collectionView.reloadData()
+                        controller.viewWillAppear(true)
+                    }
+                    
+                    
+                }
+                
+                
+            }
+            
+            
+        } catch let error {
+                print("error - \(error.localizedDescription)")
+            }
+
+    }
+    
+    
+    
+    
     
     //-------------------------------------------------------------------------------------------------------------------------------------------------
     
@@ -351,7 +384,7 @@ extension UIViewController {
             realm.add(document, update: .modified)
             do {
                 try realm.commitWrite()
-                self.showToast(message: "Modified", duration: 3.0, position: .bottom)
+                //self.showToast(message: "Modified", duration: 3.0, position: .bottom)
             } catch let error {
                 print(error.localizedDescription)
             }

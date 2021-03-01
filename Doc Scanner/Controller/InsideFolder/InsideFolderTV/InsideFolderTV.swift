@@ -106,6 +106,8 @@ extension InsideFolderVC:UITableViewDelegate, UITableViewDataSource{
             if let insider = self.storyboard?.instantiateViewController(withIdentifier: "PageHorizontalVC") as? PageHorizontalVC {
                 insider.alldocs = insideDocuments
                 insider.itemIndex = indexPath.section
+                insider.takePrimaryKey = primaryKeyName
+                
            
                 self.navigationController?.pushViewController(insider, animated: true)
                 
@@ -187,7 +189,14 @@ extension InsideFolderVC{
         
         self.docsTableView.register(UINib(nibName: "FolderTVCell", bundle: nil), forCellReuseIdentifier: "folderCell")
         
-        self.docsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height + 100, width: view.frame.width - 20, height: (view.frame.height - (self.bottomView.frame.height + 5 )))
+        if UIDevice.modelName == "iPhone 7"{
+            self.docsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height + 70 , width: view.frame.width - 20, height: (view.frame.height - (bottomView.frame.height + 5)))
+   
+        }else{
+            self.docsTableView.frame = CGRect(x: topBarStackView.frame.minX + 10, y: topBarStackView.frame.height + 100, width: view.frame.width - 20, height: (view.frame.height - (self.bottomView.frame.height + 5 )))
+        }
+        
+      
         
         self.docsTableView.backgroundColor = UIColor(hex: "EEEEEE")
         
