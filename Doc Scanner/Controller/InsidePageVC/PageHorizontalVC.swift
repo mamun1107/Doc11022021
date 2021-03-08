@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FMPhotoPicker
+//import FMPhotoPicker
 //import PagedHorizontalView
 
 class PageHorizontalVC: UIViewController {

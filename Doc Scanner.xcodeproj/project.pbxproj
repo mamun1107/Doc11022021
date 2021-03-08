@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0D414066D4ADB2C40CEB4A81 /* Pods_Doc_Scanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A978EE923E73E5C2BD288990 /* Pods_Doc_Scanner.framework */; };
+		FC0B8F3625F6585C00D98730 /* color icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0B8F3525F6585C00D98730 /* color icon.png */; };
+		FC0B8F3925F6586800D98730 /* Eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0B8F3825F6586800D98730 /* Eraser.png */; };
+		FC0B8F3C25F6587100D98730 /* Export.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0B8F3B25F6587100D98730 /* Export.png */; };
+		FC0B8F3F25F6587A00D98730 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0B8F3E25F6587A00D98730 /* gallery.png */; };
+		FC0B8F4225F6588300D98730 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0B8F4125F6588300D98730 /* 1.png */; };
+		FC0B8F4525F6588C00D98730 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0B8F4425F6588C00D98730 /* save.png */; };
+		FC0B8F4825F6589800D98730 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0B8F4725F6589800D98730 /* share.png */; };
+		FC0B8F4B25F658A100D98730 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0B8F4A25F658A000D98730 /* undo.png */; };
 		FC35DCDA25D15535005178FA /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC35DCD925D15535005178FA /* HomeTableView.swift */; };
 		FC35DCDD25D1559C005178FA /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC35DCDC25D1559C005178FA /* HomeCollectionView.swift */; };
 		FC3EADA325E51037009A6F43 /* InsideFolderActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EADA225E51037009A6F43 /* InsideFolderActionSheet.swift */; };
@@ -62,6 +70,7 @@
 		FC703D8325E0E19A00E0E798 /* InsideFolderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC703D8225E0E19A00E0E798 /* InsideFolderVC.swift */; };
 		FC703D8825E0FFB500E0E798 /* InsideFolderTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC703D8725E0FFB500E0E798 /* InsideFolderTV.swift */; };
 		FC703D8E25E134A800E0E798 /* InsideFolderCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC703D8D25E134A800E0E798 /* InsideFolderCV.swift */; };
+		FC717A6925F4E80900FA144C /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC717A6825F4E80900FA144C /* EditViewController.swift */; };
 		FC75559725D53B4300A6FC41 /* folder_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC75559625D53B4300A6FC41 /* folder_image.png */; };
 		FC75559A25D53B4900A6FC41 /* folder_lock_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC75559925D53B4900A6FC41 /* folder_lock_image.png */; };
 		FC75559D25D53B4E00A6FC41 /* file_lock_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC75559C25D53B4E00A6FC41 /* file_lock_image.png */; };
@@ -73,6 +82,61 @@
 		FC797DEC25BE894800F882BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC797DE925BE894800F882BE /* SettingsViewController.swift */; };
 		FC975D4E25D55CD200869D7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC975D4D25D55CD200869D7E /* ViewController.swift */; };
 		FCA4F28B25CFB98E007A55F4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA4F28A25CFB98E007A55F4 /* SearchViewController.swift */; };
+		FCB67F5325EF97760000CC7C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FCB67F0A25EF97760000CC7C /* LICENSE */; };
+		FCB67F5425EF97760000CC7C /* FMZoomInAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F0F25EF97760000CC7C /* FMZoomInAnimationController.swift */; };
+		FCB67F5525EF97760000CC7C /* FMZoomOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1025EF97760000CC7C /* FMZoomOutAnimationController.swift */; };
+		FCB67F5625EF97760000CC7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB67F1125EF97760000CC7C /* Assets.xcassets */; };
+		FCB67F5725EF97760000CC7C /* FMPhotoPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1325EF97760000CC7C /* FMPhotoPickerConfig.swift */; };
+		FCB67F5825EF97760000CC7C /* FMLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1425EF97760000CC7C /* FMLoadingView.swift */; };
+		FCB67F5925EF97760000CC7C /* FMAlertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1525EF97760000CC7C /* FMAlertable.swift */; };
+		FCB67F5A25EF97760000CC7C /* UIView+FMPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1625EF97760000CC7C /* UIView+FMPhotoView.swift */; };
+		FCB67F5B25EF97760000CC7C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1725EF97760000CC7C /* UIImage+Extension.swift */; };
+		FCB67F5C25EF97760000CC7C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1825EF97760000CC7C /* UIImage+Extensions.swift */; };
+		FCB67F5D25EF97760000CC7C /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1925EF97760000CC7C /* Bundle+Extension.swift */; };
+		FCB67F5E25EF97760000CC7C /* AVPlayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1A25EF97760000CC7C /* AVPlayer+Extension.swift */; };
+		FCB67F5F25EF97760000CC7C /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1B25EF97760000CC7C /* TimeInterval+Extension.swift */; };
+		FCB67F6025EF97760000CC7C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1C25EF97760000CC7C /* Const.swift */; };
+		FCB67F6125EF97760000CC7C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1D25EF97760000CC7C /* Helper.swift */; };
+		FCB67F6225EF97760000CC7C /* InsertableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1E25EF97760000CC7C /* InsertableUIView.swift */; };
+		FCB67F6325EF97760000CC7C /* FMWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F1F25EF97760000CC7C /* FMWarningView.swift */; };
+		FCB67F6425EF97760000CC7C /* FMPhotoInteractionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F2125EF97760000CC7C /* FMPhotoInteractionAnimator.swift */; };
+		FCB67F6525EF97760000CC7C /* FMPhotoPickerBatchSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F2425EF97760000CC7C /* FMPhotoPickerBatchSelector.swift */; };
+		FCB67F6625EF97760000CC7C /* FMPhotoPickerImageCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F2525EF97760000CC7C /* FMPhotoPickerImageCollectionViewLayout.swift */; };
+		FCB67F6725EF97760000CC7C /* FMPhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F2625EF97760000CC7C /* FMPhotoPickerViewController.swift */; };
+		FCB67F6825EF97760000CC7C /* FMPhotoPickerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F2725EF97760000CC7C /* FMPhotoPickerImageCollectionViewCell.swift */; };
+		FCB67F6925EF97760000CC7C /* FMVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F2A25EF97760000CC7C /* FMVideoViewController.swift */; };
+		FCB67F6A25EF97760000CC7C /* FMPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F2B25EF97760000CC7C /* FMPhotoViewController.swift */; };
+		FCB67F6B25EF97760000CC7C /* FMScalingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F2C25EF97760000CC7C /* FMScalingImageView.swift */; };
+		FCB67F6C25EF97760000CC7C /* FMImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F2D25EF97760000CC7C /* FMImageViewController.swift */; };
+		FCB67F6D25EF97760000CC7C /* FMPlaybackControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F2F25EF97760000CC7C /* FMPlaybackControlView.swift */; };
+		FCB67F6E25EF97760000CC7C /* FMPlaybackProgressTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3125EF97760000CC7C /* FMPlaybackProgressTrackLayer.swift */; };
+		FCB67F6F25EF97760000CC7C /* FMPlaybackProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3225EF97760000CC7C /* FMPlaybackProgressView.swift */; };
+		FCB67F7025EF97760000CC7C /* FMPlaybackProgressThumbLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3325EF97760000CC7C /* FMPlaybackProgressThumbLayer.swift */; };
+		FCB67F7125EF97760000CC7C /* FMPresenterTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3425EF97760000CC7C /* FMPresenterTopView.swift */; };
+		FCB67F7225EF97760000CC7C /* FMPresenterBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3525EF97760000CC7C /* FMPresenterBottomView.swift */; };
+		FCB67F7325EF97760000CC7C /* FMPresenterEditMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3625EF97760000CC7C /* FMPresenterEditMenuView.swift */; };
+		FCB67F7425EF97760000CC7C /* FMPhotoPresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3725EF97760000CC7C /* FMPhotoPresenterViewController.swift */; };
+		FCB67F7525EF97760000CC7C /* FMCropCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3A25EF97760000CC7C /* FMCropCell.swift */; };
+		FCB67F7625EF97760000CC7C /* FMCropMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3B25EF97760000CC7C /* FMCropMenuView.swift */; };
+		FCB67F7725EF97760000CC7C /* FMCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3D25EF97760000CC7C /* FMCropView.swift */; };
+		FCB67F7825EF97760000CC7C /* FMCropCropBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3E25EF97760000CC7C /* FMCropCropBoxView.swift */; };
+		FCB67F7925EF97760000CC7C /* FMCropTranslucencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F3F25EF97760000CC7C /* FMCropTranslucencyView.swift */; };
+		FCB67F7A25EF97760000CC7C /* FMCropScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4025EF97760000CC7C /* FMCropScrollView.swift */; };
+		FCB67F7B25EF97760000CC7C /* FMCropCropBoxCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4125EF97760000CC7C /* FMCropCropBoxCornersView.swift */; };
+		FCB67F7C25EF97760000CC7C /* FMCropBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4225EF97760000CC7C /* FMCropBackgroundView.swift */; };
+		FCB67F7D25EF97760000CC7C /* FMCropForegroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4325EF97760000CC7C /* FMCropForegroundView.swift */; };
+		FCB67F7E25EF97760000CC7C /* FMFiltersMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4425EF97760000CC7C /* FMFiltersMenuView.swift */; };
+		FCB67F7F25EF97760000CC7C /* FMFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4525EF97760000CC7C /* FMFilterCell.swift */; };
+		FCB67F8025EF97760000CC7C /* FMImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4625EF97760000CC7C /* FMImageEditorViewController.swift */; };
+		FCB67F8125EF97760000CC7C /* FMPhotoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4825EF97760000CC7C /* FMPhotoAsset.swift */; };
+		FCB67F8225EF97760000CC7C /* FMPhotosDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4925EF97760000CC7C /* FMPhotosDataSource.swift */; };
+		FCB67F8325EF97760000CC7C /* FMImageEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4B25EF97760000CC7C /* FMImageEditor.swift */; };
+		FCB67F8425EF97760000CC7C /* FMCrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4D25EF97760000CC7C /* FMCrop.swift */; };
+		FCB67F8525EF97760000CC7C /* FMCroppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F4E25EF97760000CC7C /* FMCroppable.swift */; };
+		FCB67F8625EF97760000CC7C /* FMFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F5025EF97760000CC7C /* FMFilter.swift */; };
+		FCB67F8725EF97760000CC7C /* FMFilterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB67F5125EF97760000CC7C /* FMFilterable.swift */; };
+		FCB67F8825EF97760000CC7C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FCB67F5225EF97760000CC7C /* README.md */; };
+		FCCDFEAD25F5F531003AB752 /* coloricon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCDFEAC25F5F531003AB752 /* coloricon.png */; };
 		FCE1BBB625C019920058F792 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE1BBB525C019920058F792 /* ImageScrollView.swift */; };
 		FF25EA2125BDE2CD000CC0C4 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF25EA2025BDE2CD000CC0C4 /* DataModel.swift */; };
 		FF66756A25A7284F00EBBD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF66756925A7284F00EBBD09 /* AppDelegate.swift */; };
@@ -104,6 +168,14 @@
 		0E024345BC557465174DA630 /* Pods-Doc Scanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doc Scanner.release.xcconfig"; path = "Target Support Files/Pods-Doc Scanner/Pods-Doc Scanner.release.xcconfig"; sourceTree = "<group>"; };
 		A978EE923E73E5C2BD288990 /* Pods_Doc_Scanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doc_Scanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2A6D6117116498BBB1FD94 /* Pods-Doc Scanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doc Scanner.debug.xcconfig"; path = "Target Support Files/Pods-Doc Scanner/Pods-Doc Scanner.debug.xcconfig"; sourceTree = "<group>"; };
+		FC0B8F3525F6585C00D98730 /* color icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color icon.png"; sourceTree = "<group>"; };
+		FC0B8F3825F6586800D98730 /* Eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eraser.png; sourceTree = "<group>"; };
+		FC0B8F3B25F6587100D98730 /* Export.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Export.png; sourceTree = "<group>"; };
+		FC0B8F3E25F6587A00D98730 /* gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gallery.png; sourceTree = "<group>"; };
+		FC0B8F4125F6588300D98730 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		FC0B8F4425F6588C00D98730 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		FC0B8F4725F6589800D98730 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		FC0B8F4A25F658A000D98730 /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo.png; sourceTree = "<group>"; };
 		FC35DCD925D15535005178FA /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 		FC35DCDC25D1559C005178FA /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 		FC3EADA225E51037009A6F43 /* InsideFolderActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideFolderActionSheet.swift; sourceTree = "<group>"; };
@@ -159,6 +231,7 @@
 		FC703D8225E0E19A00E0E798 /* InsideFolderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideFolderVC.swift; sourceTree = "<group>"; };
 		FC703D8725E0FFB500E0E798 /* InsideFolderTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideFolderTV.swift; sourceTree = "<group>"; };
 		FC703D8D25E134A800E0E798 /* InsideFolderCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideFolderCV.swift; sourceTree = "<group>"; };
+		FC717A6825F4E80900FA144C /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		FC75559625D53B4300A6FC41 /* folder_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_image.png; sourceTree = "<group>"; };
 		FC75559925D53B4900A6FC41 /* folder_lock_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_lock_image.png; sourceTree = "<group>"; };
 		FC75559C25D53B4E00A6FC41 /* file_lock_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = file_lock_image.png; sourceTree = "<group>"; };
@@ -171,6 +244,61 @@
 		FC797DE925BE894800F882BE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FC975D4D25D55CD200869D7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCA4F28A25CFB98E007A55F4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FCB67F0A25EF97760000CC7C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FCB67F0F25EF97760000CC7C /* FMZoomInAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMZoomInAnimationController.swift; sourceTree = "<group>"; };
+		FCB67F1025EF97760000CC7C /* FMZoomOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMZoomOutAnimationController.swift; sourceTree = "<group>"; };
+		FCB67F1125EF97760000CC7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCB67F1325EF97760000CC7C /* FMPhotoPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPhotoPickerConfig.swift; sourceTree = "<group>"; };
+		FCB67F1425EF97760000CC7C /* FMLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMLoadingView.swift; sourceTree = "<group>"; };
+		FCB67F1525EF97760000CC7C /* FMAlertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMAlertable.swift; sourceTree = "<group>"; };
+		FCB67F1625EF97760000CC7C /* UIView+FMPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FMPhotoView.swift"; sourceTree = "<group>"; };
+		FCB67F1725EF97760000CC7C /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		FCB67F1825EF97760000CC7C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		FCB67F1925EF97760000CC7C /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		FCB67F1A25EF97760000CC7C /* AVPlayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extension.swift"; sourceTree = "<group>"; };
+		FCB67F1B25EF97760000CC7C /* TimeInterval+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extension.swift"; sourceTree = "<group>"; };
+		FCB67F1C25EF97760000CC7C /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		FCB67F1D25EF97760000CC7C /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		FCB67F1E25EF97760000CC7C /* InsertableUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertableUIView.swift; sourceTree = "<group>"; };
+		FCB67F1F25EF97760000CC7C /* FMWarningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMWarningView.swift; sourceTree = "<group>"; };
+		FCB67F2125EF97760000CC7C /* FMPhotoInteractionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPhotoInteractionAnimator.swift; sourceTree = "<group>"; };
+		FCB67F2425EF97760000CC7C /* FMPhotoPickerBatchSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPhotoPickerBatchSelector.swift; sourceTree = "<group>"; };
+		FCB67F2525EF97760000CC7C /* FMPhotoPickerImageCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPhotoPickerImageCollectionViewLayout.swift; sourceTree = "<group>"; };
+		FCB67F2625EF97760000CC7C /* FMPhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPhotoPickerViewController.swift; sourceTree = "<group>"; };
+		FCB67F2725EF97760000CC7C /* FMPhotoPickerImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPhotoPickerImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		FCB67F2A25EF97760000CC7C /* FMVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMVideoViewController.swift; sourceTree = "<group>"; };
+		FCB67F2B25EF97760000CC7C /* FMPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPhotoViewController.swift; sourceTree = "<group>"; };
+		FCB67F2C25EF97760000CC7C /* FMScalingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMScalingImageView.swift; sourceTree = "<group>"; };
+		FCB67F2D25EF97760000CC7C /* FMImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMImageViewController.swift; sourceTree = "<group>"; };
+		FCB67F2F25EF97760000CC7C /* FMPlaybackControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPlaybackControlView.swift; sourceTree = "<group>"; };
+		FCB67F3125EF97760000CC7C /* FMPlaybackProgressTrackLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPlaybackProgressTrackLayer.swift; sourceTree = "<group>"; };
+		FCB67F3225EF97760000CC7C /* FMPlaybackProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPlaybackProgressView.swift; sourceTree = "<group>"; };
+		FCB67F3325EF97760000CC7C /* FMPlaybackProgressThumbLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPlaybackProgressThumbLayer.swift; sourceTree = "<group>"; };
+		FCB67F3425EF97760000CC7C /* FMPresenterTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPresenterTopView.swift; sourceTree = "<group>"; };
+		FCB67F3525EF97760000CC7C /* FMPresenterBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPresenterBottomView.swift; sourceTree = "<group>"; };
+		FCB67F3625EF97760000CC7C /* FMPresenterEditMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPresenterEditMenuView.swift; sourceTree = "<group>"; };
+		FCB67F3725EF97760000CC7C /* FMPhotoPresenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPhotoPresenterViewController.swift; sourceTree = "<group>"; };
+		FCB67F3A25EF97760000CC7C /* FMCropCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCropCell.swift; sourceTree = "<group>"; };
+		FCB67F3B25EF97760000CC7C /* FMCropMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCropMenuView.swift; sourceTree = "<group>"; };
+		FCB67F3D25EF97760000CC7C /* FMCropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCropView.swift; sourceTree = "<group>"; };
+		FCB67F3E25EF97760000CC7C /* FMCropCropBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCropCropBoxView.swift; sourceTree = "<group>"; };
+		FCB67F3F25EF97760000CC7C /* FMCropTranslucencyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCropTranslucencyView.swift; sourceTree = "<group>"; };
+		FCB67F4025EF97760000CC7C /* FMCropScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCropScrollView.swift; sourceTree = "<group>"; };
+		FCB67F4125EF97760000CC7C /* FMCropCropBoxCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCropCropBoxCornersView.swift; sourceTree = "<group>"; };
+		FCB67F4225EF97760000CC7C /* FMCropBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCropBackgroundView.swift; sourceTree = "<group>"; };
+		FCB67F4325EF97760000CC7C /* FMCropForegroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCropForegroundView.swift; sourceTree = "<group>"; };
+		FCB67F4425EF97760000CC7C /* FMFiltersMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMFiltersMenuView.swift; sourceTree = "<group>"; };
+		FCB67F4525EF97760000CC7C /* FMFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMFilterCell.swift; sourceTree = "<group>"; };
+		FCB67F4625EF97760000CC7C /* FMImageEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMImageEditorViewController.swift; sourceTree = "<group>"; };
+		FCB67F4825EF97760000CC7C /* FMPhotoAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPhotoAsset.swift; sourceTree = "<group>"; };
+		FCB67F4925EF97760000CC7C /* FMPhotosDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMPhotosDataSource.swift; sourceTree = "<group>"; };
+		FCB67F4B25EF97760000CC7C /* FMImageEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMImageEditor.swift; sourceTree = "<group>"; };
+		FCB67F4D25EF97760000CC7C /* FMCrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCrop.swift; sourceTree = "<group>"; };
+		FCB67F4E25EF97760000CC7C /* FMCroppable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMCroppable.swift; sourceTree = "<group>"; };
+		FCB67F5025EF97760000CC7C /* FMFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMFilter.swift; sourceTree = "<group>"; };
+		FCB67F5125EF97760000CC7C /* FMFilterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMFilterable.swift; sourceTree = "<group>"; };
+		FCB67F5225EF97760000CC7C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FCCDFEAC25F5F531003AB752 /* coloricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coloricon.png; sourceTree = "<group>"; };
 		FCE1BBB525C019920058F792 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		FF25EA2025BDE2CD000CC0C4 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		FF66756625A7284F00EBBD09 /* Doc Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Doc Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +357,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FC0B8F3425F6584000D98730 /* EditView */ = {
+			isa = PBXGroup;
+			children = (
+				FCCDFEAC25F5F531003AB752 /* coloricon.png */,
+				FC0B8F3525F6585C00D98730 /* color icon.png */,
+				FC0B8F3825F6586800D98730 /* Eraser.png */,
+				FC0B8F3B25F6587100D98730 /* Export.png */,
+				FC0B8F3E25F6587A00D98730 /* gallery.png */,
+				FC0B8F4125F6588300D98730 /* 1.png */,
+				FC0B8F4425F6588C00D98730 /* save.png */,
+				FC0B8F4725F6589800D98730 /* share.png */,
+				FC0B8F4A25F658A000D98730 /* undo.png */,
+			);
+			path = EditView;
+			sourceTree = "<group>";
+		};
 		FC35DCD525D154CB005178FA /* HomeTV */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +425,7 @@
 		FC5D556D25BEC41300CDEEE4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FC0B8F3425F6584000D98730 /* EditView */,
 				FC6BA9AB25C56CAD00D30DF7 /* CustomDesign */,
 				FC6BA94D25C52D6000D30DF7 /* FolderImages */,
 				FC5D558925BEC69400CDEEE4 /* Settings */,
@@ -471,6 +616,211 @@
 			path = SearchHome;
 			sourceTree = "<group>";
 		};
+		FCB67F0725EF91110000CC7C /* FMPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F0825EF91590000CC7C /* FMPhotoPicker */,
+			);
+			path = FMPhotoPicker;
+			sourceTree = "<group>";
+		};
+		FCB67F0825EF91590000CC7C /* FMPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F0A25EF97760000CC7C /* LICENSE */,
+				FCB67F5225EF97760000CC7C /* README.md */,
+				FCB67F0D25EF97760000CC7C /* source */,
+			);
+			name = FMPhotoPicker;
+			sourceTree = "<group>";
+		};
+		FCB67F0D25EF97760000CC7C /* source */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F0E25EF97760000CC7C /* Animated Trasitioning */,
+				FCB67F1125EF97760000CC7C /* Assets.xcassets */,
+				FCB67F1225EF97760000CC7C /* Utilities */,
+				FCB67F2025EF97760000CC7C /* Interaction Animator */,
+				FCB67F2225EF97760000CC7C /* Scene */,
+				FCB67F4725EF97760000CC7C /* Data */,
+				FCB67F4A25EF97760000CC7C /* ImageEditor */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		FCB67F0E25EF97760000CC7C /* Animated Trasitioning */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F0F25EF97760000CC7C /* FMZoomInAnimationController.swift */,
+				FCB67F1025EF97760000CC7C /* FMZoomOutAnimationController.swift */,
+			);
+			path = "Animated Trasitioning";
+			sourceTree = "<group>";
+		};
+		FCB67F1225EF97760000CC7C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F1325EF97760000CC7C /* FMPhotoPickerConfig.swift */,
+				FCB67F1425EF97760000CC7C /* FMLoadingView.swift */,
+				FCB67F1525EF97760000CC7C /* FMAlertable.swift */,
+				FCB67F1625EF97760000CC7C /* UIView+FMPhotoView.swift */,
+				FCB67F1725EF97760000CC7C /* UIImage+Extension.swift */,
+				FCB67F1825EF97760000CC7C /* UIImage+Extensions.swift */,
+				FCB67F1925EF97760000CC7C /* Bundle+Extension.swift */,
+				FCB67F1A25EF97760000CC7C /* AVPlayer+Extension.swift */,
+				FCB67F1B25EF97760000CC7C /* TimeInterval+Extension.swift */,
+				FCB67F1C25EF97760000CC7C /* Const.swift */,
+				FCB67F1D25EF97760000CC7C /* Helper.swift */,
+				FCB67F1E25EF97760000CC7C /* InsertableUIView.swift */,
+				FCB67F1F25EF97760000CC7C /* FMWarningView.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FCB67F2025EF97760000CC7C /* Interaction Animator */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F2125EF97760000CC7C /* FMPhotoInteractionAnimator.swift */,
+			);
+			path = "Interaction Animator";
+			sourceTree = "<group>";
+		};
+		FCB67F2225EF97760000CC7C /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F2325EF97760000CC7C /* Picker */,
+				FCB67F2825EF97760000CC7C /* Presenter */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		FCB67F2325EF97760000CC7C /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F2425EF97760000CC7C /* FMPhotoPickerBatchSelector.swift */,
+				FCB67F2525EF97760000CC7C /* FMPhotoPickerImageCollectionViewLayout.swift */,
+				FCB67F2625EF97760000CC7C /* FMPhotoPickerViewController.swift */,
+				FCB67F2725EF97760000CC7C /* FMPhotoPickerImageCollectionViewCell.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		FCB67F2825EF97760000CC7C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F2925EF97760000CC7C /* Viewer */,
+				FCB67F2E25EF97760000CC7C /* Views */,
+				FCB67F3725EF97760000CC7C /* FMPhotoPresenterViewController.swift */,
+				FCB67F3825EF97760000CC7C /* Editor */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FCB67F2925EF97760000CC7C /* Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F2A25EF97760000CC7C /* FMVideoViewController.swift */,
+				FCB67F2B25EF97760000CC7C /* FMPhotoViewController.swift */,
+				FCB67F2C25EF97760000CC7C /* FMScalingImageView.swift */,
+				FCB67F2D25EF97760000CC7C /* FMImageViewController.swift */,
+			);
+			path = Viewer;
+			sourceTree = "<group>";
+		};
+		FCB67F2E25EF97760000CC7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F2F25EF97760000CC7C /* FMPlaybackControlView.swift */,
+				FCB67F3025EF97760000CC7C /* Progress */,
+				FCB67F3425EF97760000CC7C /* FMPresenterTopView.swift */,
+				FCB67F3525EF97760000CC7C /* FMPresenterBottomView.swift */,
+				FCB67F3625EF97760000CC7C /* FMPresenterEditMenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCB67F3025EF97760000CC7C /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F3125EF97760000CC7C /* FMPlaybackProgressTrackLayer.swift */,
+				FCB67F3225EF97760000CC7C /* FMPlaybackProgressView.swift */,
+				FCB67F3325EF97760000CC7C /* FMPlaybackProgressThumbLayer.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		FCB67F3825EF97760000CC7C /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F3925EF97760000CC7C /* Views */,
+				FCB67F4625EF97760000CC7C /* FMImageEditorViewController.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		FCB67F3925EF97760000CC7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F3A25EF97760000CC7C /* FMCropCell.swift */,
+				FCB67F3B25EF97760000CC7C /* FMCropMenuView.swift */,
+				FCB67F3C25EF97760000CC7C /* Crop */,
+				FCB67F4425EF97760000CC7C /* FMFiltersMenuView.swift */,
+				FCB67F4525EF97760000CC7C /* FMFilterCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCB67F3C25EF97760000CC7C /* Crop */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F3D25EF97760000CC7C /* FMCropView.swift */,
+				FCB67F3E25EF97760000CC7C /* FMCropCropBoxView.swift */,
+				FCB67F3F25EF97760000CC7C /* FMCropTranslucencyView.swift */,
+				FCB67F4025EF97760000CC7C /* FMCropScrollView.swift */,
+				FCB67F4125EF97760000CC7C /* FMCropCropBoxCornersView.swift */,
+				FCB67F4225EF97760000CC7C /* FMCropBackgroundView.swift */,
+				FCB67F4325EF97760000CC7C /* FMCropForegroundView.swift */,
+			);
+			path = Crop;
+			sourceTree = "<group>";
+		};
+		FCB67F4725EF97760000CC7C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F4825EF97760000CC7C /* FMPhotoAsset.swift */,
+				FCB67F4925EF97760000CC7C /* FMPhotosDataSource.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FCB67F4A25EF97760000CC7C /* ImageEditor */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F4B25EF97760000CC7C /* FMImageEditor.swift */,
+				FCB67F4C25EF97760000CC7C /* Crop */,
+				FCB67F4F25EF97760000CC7C /* Filter */,
+			);
+			path = ImageEditor;
+			sourceTree = "<group>";
+		};
+		FCB67F4C25EF97760000CC7C /* Crop */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F4D25EF97760000CC7C /* FMCrop.swift */,
+				FCB67F4E25EF97760000CC7C /* FMCroppable.swift */,
+			);
+			path = Crop;
+			sourceTree = "<group>";
+		};
+		FCB67F4F25EF97760000CC7C /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				FCB67F5025EF97760000CC7C /* FMFilter.swift */,
+				FCB67F5125EF97760000CC7C /* FMFilterable.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		FCE1BBB425C019330058F792 /* imageScrolling */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +832,7 @@
 		FF66755D25A7284F00EBBD09 = {
 			isa = PBXGroup;
 			children = (
+				FCB67F0725EF91110000CC7C /* FMPhotoPicker */,
 				FC76D3F925EB798700FED67A /* PagedHorizontalView */,
 				FF66756825A7284F00EBBD09 /* Doc Scanner */,
 				FF66756725A7284F00EBBD09 /* Products */,
@@ -517,6 +868,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE1BBB425C019330058F792 /* imageScrolling */,
+				FC717A6825F4E80900FA144C /* EditViewController.swift */,
 				FF701D3925AC6AFE0029BA84 /* EditVC.swift */,
 				FF701D4725AC76BA0029BA84 /* EditVCHelper.swift */,
 			);
@@ -664,9 +1016,11 @@
 			files = (
 				FF66757625A7285100EBBD09 /* LaunchScreen.storyboard in Resources */,
 				FC5D557F25BEC43600CDEEE4 /* settings_icon.png in Resources */,
+				FC0B8F3925F6586800D98730 /* Eraser.png in Resources */,
 				FC6BA9B425C56CD800D30DF7 /* btncamera.png in Resources */,
 				FF66757325A7285100EBBD09 /* Assets.xcassets in Resources */,
 				FC6BA9B225C56CD800D30DF7 /* bottom shape.png in Resources */,
+				FC0B8F4525F6588C00D98730 /* save.png in Resources */,
 				FC5D55AD25BEC8A800CDEEE4 /* terms_privecy_settings.png in Resources */,
 				FC75559A25D53B4900A6FC41 /* folder_lock_image.png in Resources */,
 				FC5D55B125BEC8A800CDEEE4 /* moreapps_settings.png in Resources */,
@@ -681,22 +1035,32 @@
 				FC5D557B25BEC43600CDEEE4 /* grid_select_icon_final.png in Resources */,
 				FF82137425B47574005EE685 /* FolderGalleryCVCell.xib in Resources */,
 				FC5D55AB25BEC8A800CDEEE4 /* faq_settings.png in Resources */,
+				FCB67F5625EF97760000CC7C /* Assets.xcassets in Resources */,
 				FC5D557D25BEC43600CDEEE4 /* add_folder_icon_final.png in Resources */,
 				FC5D557A25BEC43600CDEEE4 /* 300x300.png in Resources */,
+				FCB67F8825EF97760000CC7C /* README.md in Resources */,
 				FC6BA9BD25C5734B00D30DF7 /* AlertView.xib in Resources */,
 				FF66757125A7284F00EBBD09 /* Main.storyboard in Resources */,
+				FCCDFEAD25F5F531003AB752 /* coloricon.png in Resources */,
+				FC0B8F3C25F6587100D98730 /* Export.png in Resources */,
 				FC6BA9B325C56CD800D30DF7 /* transparentback.png in Resources */,
 				FC5D557C25BEC43600CDEEE4 /* 180x180.png in Resources */,
+				FC0B8F4825F6589800D98730 /* share.png in Resources */,
 				FC5D55A825BEC8A800CDEEE4 /* Subscription screen.png in Resources */,
 				FC5D558525BEC43600CDEEE4 /* list_select_icon_final.png in Resources */,
 				FC5D558225BEC43600CDEEE4 /* grid_deselect_icon_final.png in Resources */,
 				FC5D558325BEC43600CDEEE4 /* more_icon.png in Resources */,
 				FC5D55AF25BEC8A800CDEEE4 /* heart_settings.png in Resources */,
+				FC0B8F3625F6585C00D98730 /* color icon.png in Resources */,
+				FCB67F5325EF97760000CC7C /* LICENSE in Resources */,
+				FC0B8F4B25F658A100D98730 /* undo.png in Resources */,
 				FC5D55AE25BEC8A800CDEEE4 /* upgrade_button_settings.png in Resources */,
 				FC5D558125BEC43600CDEEE4 /* 210x210.png in Resources */,
 				FC75559D25D53B4E00A6FC41 /* file_lock_image.png in Resources */,
 				FC5D557E25BEC43600CDEEE4 /* list_deselect_icon_final.png in Resources */,
 				FC5D55A725BEC8A800CDEEE4 /* share_settings.png in Resources */,
+				FC0B8F3F25F6587A00D98730 /* gallery.png in Resources */,
+				FC0B8F4225F6588300D98730 /* 1.png in Resources */,
 				FC5D558025BEC43600CDEEE4 /* filter_icon_final.png in Resources */,
 				FFE80BC025A9969F005A2A29 /* FolderTVCell.xib in Resources */,
 			);
@@ -752,58 +1116,110 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC703D8325E0E19A00E0E798 /* InsideFolderVC.swift in Sources */,
+				FCB67F6E25EF97760000CC7C /* FMPlaybackProgressTrackLayer.swift in Sources */,
+				FCB67F5525EF97760000CC7C /* FMZoomOutAnimationController.swift in Sources */,
 				FC58E26525E7DA23007D6353 /* ZoomAnimatedTransitioning.swift in Sources */,
 				FF701D7E25ADF90F0029BA84 /* CreateFolderVCHelper.swift in Sources */,
 				FC797DEA25BE894800F882BE /* SettingsHelpers.swift in Sources */,
+				FCB67F8025EF97760000CC7C /* FMImageEditorViewController.swift in Sources */,
 				FC76D40525EB7AC400FED67A /* PageCvCell.swift in Sources */,
 				FC3EADA325E51037009A6F43 /* InsideFolderActionSheet.swift in Sources */,
+				FCB67F7D25EF97760000CC7C /* FMCropForegroundView.swift in Sources */,
+				FCB67F8725EF97760000CC7C /* FMFilterable.swift in Sources */,
+				FCB67F7225EF97760000CC7C /* FMPresenterBottomView.swift in Sources */,
+				FCB67F7325EF97760000CC7C /* FMPresenterEditMenuView.swift in Sources */,
+				FCB67F7925EF97760000CC7C /* FMCropTranslucencyView.swift in Sources */,
 				FC58E25A25E7DA23007D6353 /* InputSource.swift in Sources */,
+				FCB67F5C25EF97760000CC7C /* UIImage+Extensions.swift in Sources */,
 				FC797DEC25BE894800F882BE /* SettingsViewController.swift in Sources */,
 				FF66756A25A7284F00EBBD09 /* AppDelegate.swift in Sources */,
+				FCB67F6125EF97760000CC7C /* Helper.swift in Sources */,
+				FCB67F5425EF97760000CC7C /* FMZoomInAnimationController.swift in Sources */,
+				FCB67F7625EF97760000CC7C /* FMCropMenuView.swift in Sources */,
+				FCB67F6625EF97760000CC7C /* FMPhotoPickerImageCollectionViewLayout.swift in Sources */,
+				FCB67F6425EF97760000CC7C /* FMPhotoInteractionAnimator.swift in Sources */,
 				FC5FCB3E25D2BD0F00A47C95 /* SearchExtentions.swift in Sources */,
+				FCB67F8325EF97760000CC7C /* FMImageEditor.swift in Sources */,
 				FF7BFA5425A7AA79009FAC7A /* ScannerVC.swift in Sources */,
 				FC703D8E25E134A800E0E798 /* InsideFolderCV.swift in Sources */,
 				FC76D3FE25EB79DF00FED67A /* PagedHorizontalView.swift in Sources */,
+				FCB67F7B25EF97760000CC7C /* FMCropCropBoxCornersView.swift in Sources */,
 				FC6BA9B925C5733400D30DF7 /* AlertView.swift in Sources */,
 				FC76D40225EB7A8800FED67A /* PageHorizontalVC.swift in Sources */,
 				FC35DCDD25D1559C005178FA /* HomeCollectionView.swift in Sources */,
 				FCE1BBB625C019920058F792 /* ImageScrollView.swift in Sources */,
+				FCB67F5925EF97760000CC7C /* FMAlertable.swift in Sources */,
+				FCB67F6D25EF97760000CC7C /* FMPlaybackControlView.swift in Sources */,
+				FCB67F6325EF97760000CC7C /* FMWarningView.swift in Sources */,
+				FCB67F5D25EF97760000CC7C /* Bundle+Extension.swift in Sources */,
+				FCB67F6725EF97760000CC7C /* FMPhotoPickerViewController.swift in Sources */,
 				FCA4F28B25CFB98E007A55F4 /* SearchViewController.swift in Sources */,
+				FCB67F7C25EF97760000CC7C /* FMCropBackgroundView.swift in Sources */,
 				FC35DCDA25D15535005178FA /* HomeTableView.swift in Sources */,
+				FCB67F7F25EF97760000CC7C /* FMFilterCell.swift in Sources */,
 				FC58E25E25E7DA23007D6353 /* UIImage+AspectFit.swift in Sources */,
 				FC62FC1D25E4E79700D93E81 /* InsideScanVC.swift in Sources */,
+				FCB67F6F25EF97760000CC7C /* FMPlaybackProgressView.swift in Sources */,
+				FCB67F5825EF97760000CC7C /* FMLoadingView.swift in Sources */,
+				FCB67F7425EF97760000CC7C /* FMPhotoPresenterViewController.swift in Sources */,
 				FC58E25C25E7DA23007D6353 /* ActivityIndicator.swift in Sources */,
 				FF82136E25B47492005EE685 /* FolderGalleryVC.swift in Sources */,
+				FCB67F5B25EF97760000CC7C /* UIImage+Extension.swift in Sources */,
 				FC58E25F25E7DA23007D6353 /* SwiftSupport.swift in Sources */,
 				FF82137725B478A9005EE685 /* FolderGalleryVCHelper.swift in Sources */,
+				FCB67F6B25EF97760000CC7C /* FMScalingImageView.swift in Sources */,
 				FF701D7B25ADF3E80029BA84 /* CreateFolderVC.swift in Sources */,
 				FC58E26225E7DA23007D6353 /* PageIndicatorPosition.swift in Sources */,
 				FC58E26325E7DA23007D6353 /* ImageSlideshowItem.swift in Sources */,
 				FC975D4E25D55CD200869D7E /* ViewController.swift in Sources */,
 				FC58E26025E7DA23007D6353 /* Bundle+Module.swift in Sources */,
+				FCB67F8625EF97760000CC7C /* FMFilter.swift in Sources */,
+				FCB67F6C25EF97760000CC7C /* FMImageViewController.swift in Sources */,
+				FC717A6925F4E80900FA144C /* EditViewController.swift in Sources */,
 				FFE80BC625A9CB2D005A2A29 /* DocsAndFoldsCVCell.swift in Sources */,
+				FCB67F8225EF97760000CC7C /* FMPhotosDataSource.swift in Sources */,
+				FCB67F7E25EF97760000CC7C /* FMFiltersMenuView.swift in Sources */,
+				FCB67F6925EF97760000CC7C /* FMVideoViewController.swift in Sources */,
 				FF701D4E25ACB0BD0029BA84 /* RealmModel.swift in Sources */,
 				FF7BFA1225A749DE009FAC7A /* HomeVCHelper.swift in Sources */,
 				FFE80BBF25A9969F005A2A29 /* FolderTVCell.swift in Sources */,
 				FC6BA97125C5346700D30DF7 /* ColorExtensions.swift in Sources */,
+				FCB67F5725EF97760000CC7C /* FMPhotoPickerConfig.swift in Sources */,
+				FCB67F7125EF97760000CC7C /* FMPresenterTopView.swift in Sources */,
+				FCB67F6525EF97760000CC7C /* FMPhotoPickerBatchSelector.swift in Sources */,
 				FF82137325B47574005EE685 /* FolderGalleryCVCell.swift in Sources */,
+				FCB67F7725EF97760000CC7C /* FMCropView.swift in Sources */,
+				FCB67F7525EF97760000CC7C /* FMCropCell.swift in Sources */,
+				FCB67F6A25EF97760000CC7C /* FMPhotoViewController.swift in Sources */,
 				FC58E26125E7DA23007D6353 /* FullScreenSlideshowViewController.swift in Sources */,
 				FF66756C25A7284F00EBBD09 /* SceneDelegate.swift in Sources */,
 				FF701D3A25AC6AFE0029BA84 /* EditVC.swift in Sources */,
 				FC58E25B25E7DA23007D6353 /* ImageSlideshow.swift in Sources */,
 				FF7BFA5A25A7BCE7009FAC7A /* ScannerVCHelper.swift in Sources */,
 				FF7BFA0225A74427009FAC7A /* Support.swift in Sources */,
+				FCB67F8525EF97760000CC7C /* FMCroppable.swift in Sources */,
+				FCB67F5E25EF97760000CC7C /* AVPlayer+Extension.swift in Sources */,
+				FCB67F5F25EF97760000CC7C /* TimeInterval+Extension.swift in Sources */,
+				FCB67F7825EF97760000CC7C /* FMCropCropBoxView.swift in Sources */,
+				FCB67F8425EF97760000CC7C /* FMCrop.swift in Sources */,
+				FCB67F8125EF97760000CC7C /* FMPhotoAsset.swift in Sources */,
+				FCB67F6225EF97760000CC7C /* InsertableUIView.swift in Sources */,
+				FCB67F5A25EF97760000CC7C /* UIView+FMPhotoView.swift in Sources */,
 				FFF325A925A73BED0064D4AE /* HomeVC.swift in Sources */,
+				FCB67F7A25EF97760000CC7C /* FMCropScrollView.swift in Sources */,
+				FCB67F7025EF97760000CC7C /* FMPlaybackProgressThumbLayer.swift in Sources */,
 				FC69DD3725D401D500A2098B /* SearchModel.swift in Sources */,
 				FF701D4825AC76BA0029BA84 /* EditVCHelper.swift in Sources */,
 				FC797DEB25BE894800F882BE /* SettingsTableViewCell.swift in Sources */,
 				FF25EA2125BDE2CD000CC0C4 /* DataModel.swift in Sources */,
 				FC62FC1825E4E74400D93E81 /* AleartInsideFolder.swift in Sources */,
+				FCB67F6825EF97760000CC7C /* FMPhotoPickerImageCollectionViewCell.swift in Sources */,
 				FC58E26425E7DA23007D6353 /* UIImageView+Tools.swift in Sources */,
 				FC703D8825E0FFB500E0E798 /* InsideFolderTV.swift in Sources */,
 				FC5FCB4125D2BDF400A47C95 /* Configuraton.swift in Sources */,
 				FC58E25D25E7DA23007D6353 /* PageIndicator.swift in Sources */,
 				FC5FCB2D25D27F8F00A47C95 /* HomeAsset.swift in Sources */,
+				FCB67F6025EF97760000CC7C /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

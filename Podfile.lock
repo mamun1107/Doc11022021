@@ -1,0 +1,30 @@
+PODS:
+  - Realm (10.5.1):
+    - Realm/Headers (= 10.5.1)
+  - Realm/Headers (10.5.1)
+  - RealmSwift (10.5.1):
+    - Realm (= 10.5.1)
+  - SwiftSignatureView (3.2.0)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - RealmSwift
+  - SwiftSignatureView
+  - Toast-Swift
+
+SPEC REPOS:
+  trunk:
+    - Realm
+    - RealmSwift
+    - SwiftSignatureView
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Realm: 77fcb4e0b9f2963ea06f584749a0d7dc9cab95e1
+  RealmSwift: 6abe6aa6cd8b70cc1a87afcb9232cabea74ff1ac
+  SwiftSignatureView: cd8cca297cc2ca6a6c174da22fb908c33d03d3c0
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 60f84e8a41e03f50dae1ac8a04f91f0f29f35548
+
+COCOAPODS: 1.10.1

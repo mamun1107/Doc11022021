@@ -406,7 +406,13 @@ extension UIViewController {
     
     func setFolderPasswordToRealm(folderName: String, password: String, controller:HomeVC) {
         
-        print("")
+        var catchPassword:Bool = Bool()
+        
+        if password == ""{
+            catchPassword = false
+        }else{
+            catchPassword = true
+        }
         
         let realm = try! Realm() // realm object
         
@@ -419,14 +425,14 @@ extension UIViewController {
             realm.create(Folders.self,
                          
                          value: ["folderName": folderName,
-                                 "isPasswordProtected": true,
+                                 "isPasswordProtected": catchPassword,
                                  "password": password],
                          update: .modified)
             
             do {
                 
                 try realm.commitWrite()
-                self.showToast(message: "Password Protected", duration: 3.0, position: .bottom)
+               // self.showToast(message: "Password Protected", duration: 3.0, position: .bottom)
                 
                 DispatchQueue.main.async {
                     controller.docsAndFoldsTableView.reloadData()
@@ -453,6 +459,14 @@ extension UIViewController {
     
     func setDocumentPasswordToRealm(documentName: String, password: String, controller:HomeVC) {
         
+        var catchPassword:Bool = Bool()
+        
+        if password == ""{
+            catchPassword = false
+        }else{
+            catchPassword = true
+        }
+        
         let realm = try! Realm() // realm object
         
         realm.beginWrite()
@@ -464,14 +478,14 @@ extension UIViewController {
             realm.create(Documents.self,
                          
                          value: ["documentName": documentName,
-                                 "isPasswordProtected": true,
+                                 "isPasswordProtected": catchPassword,
                                  "password": password],
                          update: .modified)
             
             do {
                 
                 try realm.commitWrite()
-                self.showToast(message: "Password Protected", duration: 3.0, position: .bottom)
+               //self.showToast(message: "Password Protected", duration: 3.0, position: .bottom)
                 
                 DispatchQueue.main.async {
                     controller.docsAndFoldsTableView.reloadData()
@@ -824,15 +838,28 @@ class Alerts {
     
     func showOptionActionSheet(controller: HomeVC, folderName: String, from:String, passwordProtected:Bool, index_option:Int) {
         
-       
+        
         
         let alert = UIAlertController(title: "", message: "Please Select an Option", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Set Password", style: .default, handler: { (_) in
-            
-            Alerts().showSetPassAlert(controller: controller, folderName: folderName, from: from)
-        }))
-        
+        if passwordProtected == true{
+            alert.addAction(UIAlertAction(title: "Remove Password", style: .default, handler: { (_) in
+                
+                // Alerts().showSetPassAlert(controller: controller, folderName: folderName, from: from)
+                
+                if from == "folder"{
+                    Alerts().showGetPassAlert(controller: controller, currentPassword: controller.myFolders[index_option].password!, index: index_option, from: "folder", for_using:"resetpassword", passwordProtected:passwordProtected)
+                }else{
+                    Alerts().showGetPassAlert(controller: controller, currentPassword: controller.myFolders[index_option].password!, index: index_option, from: "doc", for_using:"resetpassword", passwordProtected:passwordProtected)
+                }
+                
+            }))
+        }else{
+            alert.addAction(UIAlertAction(title: "Set Password", style: .default, handler: { (_) in
+                
+                Alerts().showSetPassAlert(controller: controller, folderName: folderName, from: from)
+            }))
+        }
         alert.addAction(UIAlertAction(title: "Rename", style: .default, handler: { (_) in
             
             if (passwordProtected == true){
@@ -948,6 +975,27 @@ class Alerts {
         
         let confirmAction = UIAlertAction(title: "OK", style: .default) { (_) in
             if let txtField = alertController.textFields?.first, let text = txtField.text {
+                
+                
+                if (from == "folder" && for_using == "resetpassword") {
+                    if text == currentPassword{
+                        print("password match!")
+                        UIViewController().setFolderPasswordToRealm(folderName: controller.myFolders[index].folderName!, password: "", controller:controller)
+                    }else{
+                        controller.showMessageToUser(title: "Message", msg: "your password is worng try again")
+                    }
+                    
+                }
+                
+                if (from == "doc" && for_using == "resetpassword") {
+                    if text == currentPassword{
+                        print("password match!")
+                        UIViewController().setDocumentPasswordToRealm(documentName: controller.myDocuments[index].documentName!, password: "", controller:controller)
+                    }else{
+                        controller.showMessageToUser(title: "Message", msg: "your password is worng try again")
+                    }
+                    
+                }
                 
                 // section for folder with Password match for  Option SetPassword
                 if (from == "folder" && for_using == "password") {
