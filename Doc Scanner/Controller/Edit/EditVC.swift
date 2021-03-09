@@ -109,20 +109,25 @@ class EditVC: UIViewController {
     
     @IBAction func sharePressed(_ sender: UIButton) {
         
-        
-        if let createSearchVC = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController {
-           // createSearchVC.totalFolders = self.myFolders
-           // createSearchVC.totalDocuments = self.myDocuments
-   
-            //let transition = CATransition()
-            //transition.duration = 0.6
-           // transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
-            //transition.type = CATransitionType.moveIn
-            //transition.subtype = CATransitionSubtype.fromTop
-            //navigationController?.view.layer.add(transition, forKey: nil)
-            createSearchVC.editImage = self.editImage
-            
-            self.navigationController?.pushViewController(createSearchVC, animated: false)
+      
+        if #available(iOS 14.0, *) {
+            if let createSearchVC = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController {
+                // createSearchVC.totalFolders = self.myFolders
+                // createSearchVC.totalDocuments = self.myDocuments
+                
+                //let transition = CATransition()
+                //transition.duration = 0.6
+                // transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
+                //transition.type = CATransitionType.moveIn
+                //transition.subtype = CATransitionSubtype.fromTop
+                //navigationController?.view.layer.add(transition, forKey: nil)
+                createSearchVC.editImage = self.editImage
+               // createSearchVC.colorbuttonClicked((Any).self)
+                
+                self.navigationController?.pushViewController(createSearchVC, animated: false)
+            }
+        } else {
+            // Fallback on earlier versions
         }
         
         // pdf create done

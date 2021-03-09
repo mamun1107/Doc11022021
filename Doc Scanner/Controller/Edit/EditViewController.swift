@@ -6,142 +6,134 @@
 //
 
 import UIKit
+import PencilKit
 
+@available(iOS 14.0, *)
 class EditViewController: UIViewController {
     
+    var editImage:UIImage = UIImage()
     
+    var colorbuttonSelected:Bool = false
     
     @IBOutlet weak var topStack: UIStackView!
-    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var customVIew: UIView!
     
-    @IBOutlet weak var drawnImageView: UIImageView!
+    @IBOutlet weak var bottomSpceForFilterView: NSLayoutConstraint!
     
-    var editBtn = UIButton()
-    var editImage = UIImage()
-    var canvasView = UIView()
-    var path = UIBezierPath()
-    var startPoint = CGPoint()
-    var touchPoint = CGPoint()
+    lazy var canvasView:Canvas = Canvas(view: customVIew, imageView: imageView)
     
-    fileprivate weak var savedImageView: UIImageView?
-    //fileprivate weak var drawnImageView: UIImageView?
-    
-    
+    //var draw: Draw?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let drawnImageView = addImageView(image: editImage) as DrawnImageView
-       // drawnImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 44.0).isActive = true
-//        drawnImageView.centerXAnchor.constraint(equalTo: customVIew.centerXAnchor).isActive = true
-//        drawnImageView.centerYAnchor.constraint(equalTo: customVIew.centerYAnchor).isActive = true
-//        drawnImageView.topAnchor.constraint(equalTo: topStack.topAnchor, constant: 1.0).isActive = true
-        //imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0.0).isActive = true
-        //imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 10.0).isActive = true
-//        drawnImageView.widthAnchor.constraint(equalToConstant: customVIew.frame.width).isActive = true
-//        drawnImageView.heightAnchor.constraint(equalToConstant: customVIew.frame.height).isActive = true
-        //drawnImageView.heightAnchor.constraint(equalToConstant: customVIew.frame.height).isActive = true
-        self.drawnImageView = drawnImageView
-        
-//        let button = UIButton()
-//        button.setTitle("Save Image", for: .normal)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        button.setTitleColor(.blue, for: .normal)
-//        view.addSubview(button)
-//        button.topAnchor.constraint(equalTo: drawnImageView.bottomAnchor, constant: 60).isActive = true
-//        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
-//        button.addTarget(self, action: #selector(saveImageButtonTouchUpInside), for: .touchUpInside)
-//
-//        let savedImageView = addImageView()
-//        savedImageView.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 60).isActive = true
-//        savedImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        self.savedImageView = savedImageView
+        setUp()
+        canvasView.drawingPolicy = .default
+        setUpCanvas()
     }
     
+    func setUp() {
+        setUpView()
+        setupImage()
+    }
     
-    private func addImageView<T: UIImageView>(image: UIImage? = nil) -> T {
-        let imageView = T(frame: .zero)
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = image
-        self.view.addSubview(customVIew)
-        self.customVIew.addSubview(imageView)
-       
+    func setUpView() {
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.addSubview(canvasView)
         
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func setupImage() {
         
+        imageView.image = editImage
         
-        imageView.centerXAnchor.constraint(equalTo: customVIew.centerXAnchor).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: customVIew.centerYAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: customVIew.topAnchor, constant: 2.0).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: customVIew.frame.width).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: customVIew.frame.height).isActive = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
-       
-        return imageView
+            guard
+                let window = view.window,
+                let toolPicker = PKToolPicker.shared(for: window) else { return }
+
+            toolPicker.setVisible(true, forFirstResponder: canvasView)
+            toolPicker.addObserver(canvasView)
+            canvasView.becomeFirstResponder()
     }
     
-    @objc func saveImageButtonTouchUpInside(sender: UIButton) {
-        savedImageView?.image = drawnImageView?.screenShot
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        //setUpCanvas()
+//    }
+    
+    func setUpCanvas() {
+        guard let window = view.window, let toolPiker = PKToolPicker.shared(for: window) else {
+            return
+        }
+       // canvasView.drawingPolicy = .default
+        toolPiker.setVisible(true, forFirstResponder: canvasView)
+        toolPiker.addObserver(canvasView)
+        canvasView.becomeFirstResponder()
     }
+    
+    @IBAction func save(_ sender: Any) {
+        let annotationImage =  canvasView.drawing.image(from: imageView.bounds, scale: 1.0)
+        guard let image = imageView.image else { return }
+        let joinedImage = image.mergeWith(topImage: annotationImage)
+        shareImage(image: joinedImage)
+    }
+    
+    private func shareImage(image: UIImage) {
+        let item: [Any] = [image]
+        let ac = UIActivityViewController(activityItems: item, applicationActivities: nil)
+        self.present(ac, animated: true)
+    }
+    
+    @IBAction func colorbuttonClicked(_ sender: Any) {
+        guard let window = view.window, let toolPiker = PKToolPicker.shared(for: window) else {
+            return
+        }
+        toolPiker.setVisible(true, forFirstResponder: canvasView)
+        toolPiker.addObserver(canvasView)
+        canvasView.becomeFirstResponder()
+    }
+    
+    
+    @IBAction func eraseButtonClicked(_ sender: Any) {
+        canvasView.drawing = PKDrawing()
+    }
+    
+    
+    @IBAction func exportButtonClicked(_ sender: Any) {
+//                var value = bottomSpceForFilterView.constant
+//                value = 0
+//                UIView.animate(withDuration: 0.7) {
+//                    self.bottomSpceForFilterView.constant = value
+//                    self.view.layoutIfNeeded()
+//                }
+    }
+    
+    
+    
+    
 }
 
-class DrawnImageView: UIImageView {
-    private lazy var path = UIBezierPath()
-    private lazy var previousTouchPoint = CGPoint.zero
-    private lazy var shapeLayer = CAShapeLayer()
+@available(iOS 14.0, *)
+extension EditViewController{
+    
+    
+    @IBAction func gotoFilterView(_ sender: Any) {
+        
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupView()
+        
     }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    func setupView(){
-        layer.addSublayer(shapeLayer)
-        shapeLayer.lineWidth = 50
-        shapeLayer.fillColor = nil
-        shapeLayer.opacity = 0.1
-        shapeLayer.strokeColor = UIColor.blue.cgColor
-        isUserInteractionEnabled = true
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        if let location = touches.first?.location(in: self) { previousTouchPoint = location }
-    }
-
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        if let location = touches.first?.location(in: self) {
-            path.move(to: location)
-            path.addLine(to: previousTouchPoint)
-            previousTouchPoint = location
-            shapeLayer.path = path.cgPath
-        }
-    }
-}
-
-//// https://stackoverflow.com/a/40953026/4488252
-extension UIView {
-    var screenShot: UIImage?  {
-        let scale = UIScreen.main.scale
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale)
-        if let context = UIGraphicsGetCurrentContext() {
-            layer.render(in: context)
-            let screenshot = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            return screenshot
-        }
-        return nil
+    
+    @IBAction func downTheFilterView(_ sender: Any) {
+//        var value = bottomSpceForFilterView.constant
+//        value = -1000
+//        UIView.animate(withDuration: 0.7) {
+//            self.bottomSpceForFilterView.constant = value
+//            self.view.layoutIfNeeded()
+//        }
     }
 }
